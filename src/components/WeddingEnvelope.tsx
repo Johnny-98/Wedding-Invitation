@@ -48,7 +48,7 @@ export function WeddingEnvelope({
               <EnvelopePostmark label={t('envelope.saveTheDate')} />
               <Box className="envelope-stamp">
                 <Box className="envelope-stamp-photo">
-                  <img src="/images/lovebirds.jpg" alt="" />
+                  <img src="/images/lovebirds.png" alt="" />
                 </Box>
               </Box>
             </Box>
