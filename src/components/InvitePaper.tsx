@@ -26,7 +26,7 @@ export function InvitePaper() {
               component="h1"
               variant="h1"
             >
-              {t('bride')} {t('and')} {t('groom')}
+              {t('coupleNames')}
             </Typography>
 
             <Typography className="invite-paper-tagline" component="p">

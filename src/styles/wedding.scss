@@ -1,5 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
+@mixin font-playfair {
+  font-family: 'Playfair Display', serif !important;
+}
+
+@mixin font-great-vibes {
+  font-family: 'Great Vibes', cursive !important;
+}
+
+@mixin invitation-section {
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+@mixin invitation-section-heading {
+  @include font-playfair;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #2e2e2e !important;
+  line-height: 1.35 !important;
+  margin-bottom: 0.75rem !important;
+  display: block;
+}
+
+@mixin bordered-panel {
+  border-radius: 0.35rem;
+  border: 1px solid rgba(46, 46, 46, 0.12);
+}
+
+@mixin interactive-panel {
+  @include bordered-panel;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: rgba(46, 46, 46, 0.35);
+    box-shadow: 0 4px 20px rgba(46, 46, 46, 0.12);
+  }
+}
+
 .wedding-page {
   min-height: 100vh;
   position: relative;
@@ -537,29 +581,19 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  gap: 2.5rem;
   width: 100%;
   min-height: 30vh;
+  padding: 2rem 0 0;
   background: #fff;
 }
 
-.wedding-program {
-  width: 100%;
-  max-width: 36rem;
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem 0;
-  text-align: center;
+.invitation-section {
+  @include invitation-section;
 }
 
-.program-heading {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 30px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  color: #2e2e2e !important;
-  line-height: 1.35 !important;
-  margin-bottom: 0.75rem !important;
-  display: block;
+.invitation-section-heading {
+  @include invitation-section-heading;
 }
 
 .program-placeholder {
@@ -568,15 +602,14 @@
   justify-content: center;
   overflow: hidden;
   height: clamp(10rem, 28vw, 14rem);
-  border-radius: 0.35rem;
-  border: 1px solid rgba(46, 46, 46, 0.12);
+  @include bordered-panel;
   background: rgba(130, 130, 130, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .program-coming-soon {
-  font-family: 'Playfair Display', serif !important;
+  @include font-playfair;
   font-size: clamp(1rem, 3vw, 1.25rem) !important;
   font-weight: 400 !important;
   letter-spacing: 0.22em !important;
@@ -585,38 +618,11 @@
   margin: 0 !important;
 }
 
-.wedding-location {
-  width: 100%;
-  max-width: 36rem;
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem 0;
-  text-align: center;
-}
-
-.location-heading {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 30px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  color: #2e2e2e !important;
-  line-height: 1.35 !important;
-  margin-bottom: 0.75rem !important;
-  display: block;
-}
-
 .location-map-link {
   display: block;
   overflow: hidden;
-  border-radius: 0.35rem;
-  border: 1px solid rgba(46, 46, 46, 0.12);
+  @include interactive-panel;
   cursor: pointer;
-  transition: box-shadow 0.2s ease;
-
-  &:hover,
-  &:focus-visible {
-    box-shadow: 0 4px 20px rgba(46, 46, 46, 0.12);
-  }
 }
 
 .location-map {
@@ -627,16 +633,8 @@
   pointer-events: none;
 }
 
-.wedding-rsvp {
-  width: 100%;
-  max-width: 36rem;
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem 0;
-  text-align: center;
-}
-
 .rsvp-celebration {
-  font-family: 'Great Vibes', cursive !important;
+  @include font-great-vibes;
   font-size: clamp(1.75rem, 5vw, 2.25rem) !important;
   font-weight: 400 !important;
   line-height: 1.3 !important;
@@ -646,23 +644,16 @@
 
 .rsvp-card {
   display: block;
-  border: 1px solid rgba(46, 46, 46, 0.2);
-  border-radius: 0.35rem;
   padding: 1.25rem 1rem;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
-
-  &:hover,
-  &:focus-visible {
-    border-color: rgba(46, 46, 46, 0.35);
-    box-shadow: 0 4px 20px rgba(46, 46, 46, 0.12);
-  }
+  @include interactive-panel;
+  border-color: rgba(46, 46, 46, 0.2);
 }
 
 .rsvp-message {
-  font-family: 'Playfair Display', serif !important;
+  @include font-playfair;
   font-size: clamp(0.875rem, 2.5vw, 1rem) !important;
   font-weight: 400 !important;
   letter-spacing: 0.12em !important;
@@ -851,7 +842,7 @@
   max-width: 36rem;
   margin: 0 auto;
   flex-shrink: 0;
-  padding: 1.25rem 1.25rem 2rem;
+  padding: 2rem 1.25rem 2.5rem;
   text-align: center;
   border-top: 1px solid rgba(46, 46, 46, 0.15);
 }

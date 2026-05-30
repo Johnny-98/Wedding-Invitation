@@ -6,7 +6,7 @@ export function KindlyRespond() {
   const { t } = useTranslation();
 
   return (
-    <Box className="wedding-rsvp" component="section">
+    <Box className="invitation-section" component="section">
       <Typography className="rsvp-celebration" component="p">
         {t('rsvp.celebrationLine1')}
         <br />

@@ -5,8 +5,8 @@ export function Program() {
   const { t } = useTranslation();
 
   return (
-    <Box className="wedding-program" component="section">
-      <Typography className="program-heading" variant="overline">
+    <Box className="invitation-section" component="section">
+      <Typography className="invitation-section-heading" variant="overline">
         {t('program.heading')}
       </Typography>
 

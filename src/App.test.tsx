@@ -22,8 +22,9 @@ describe('App', () => {
     );
 
     expect(screen.getByText(/Click to open/i)).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /Iren/i })).toBeInTheDocument();
-    expect(screen.getByText(/Peter/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /Iren & Peter/i }),
+    ).toBeInTheDocument();
 
     fireEvent.click(
       screen.getByRole('button', { name: /Open wedding invitation/i }),

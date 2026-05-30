@@ -10,8 +10,8 @@ export function Location() {
   const { t } = useTranslation();
 
   return (
-    <Box className="wedding-location" component="section">
-      <Typography className="location-heading" variant="overline">
+    <Box className="invitation-section" component="section">
+      <Typography className="invitation-section-heading" variant="overline">
         {t('location.heading')}
       </Typography>
 
