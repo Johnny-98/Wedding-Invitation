@@ -1,28 +1,13 @@
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { WeddingLayout } from '@/components/WeddingLayout';
 
 export function RsvpPage() {
   const { t } = useTranslation();
 
   return (
-    <Box className="wedding-page wedding-page--open">
-      <Box className="wedding-bg" aria-hidden />
-      <LanguageSwitcher />
-
-      <Box className="invitation-back">
-        <Button
-          className="invitation-back-button"
-          component={Link}
-          to="/invitation"
-          aria-label={t('rsvp.backLabel')}
-        >
-          {t('invitation.back')}
-        </Button>
-      </Box>
-
+    <WeddingLayout open backTo="/invitation">
       <Box className="rsvp-page">
         <Typography className="rsvp-page-deadline" component="h1">
           {t('rsvp.deadline')}
@@ -82,6 +67,6 @@ export function RsvpPage() {
           </Button>
         </Box>
       </Box>
-    </Box>
+    </WeddingLayout>
   );
 }

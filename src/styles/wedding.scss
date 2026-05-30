@@ -297,14 +297,6 @@
   margin: 0 0 1.25rem !important;
 }
 
-.envelope-birds {
-  width: clamp(7rem, 28vw, 11rem);
-  height: auto;
-  margin-top: 0.5rem;
-  mix-blend-mode: lighten;
-  opacity: 0.92;
-}
-
 /* ── Opened invitation ── */
 
 .invitation-panel {
@@ -772,51 +764,6 @@
   color: #fff;
 }
 
-.invitation-eyebrow {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(0.5rem, 1.6vw, 0.625rem) !important;
-  letter-spacing: 0.38em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-  margin-bottom: 1.75rem !important;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
-}
-
-.invitation-names {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(1.5rem, 5vw, 2.25rem) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.16em !important;
-  text-transform: uppercase !important;
-  color: #fff !important;
-  margin-bottom: 0.35rem !important;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
-}
-
-.invitation-plus {
-  display: inline-block;
-  margin: 0 0.35em;
-  font-weight: 400;
-}
-
-.invitation-subtitle {
-  font-family: 'Great Vibes', cursive !important;
-  font-size: clamp(1.35rem, 3.5vw, 1.75rem) !important;
-  color: rgba(255, 255, 255, 0.92) !important;
-  margin-bottom: 1.75rem !important;
-}
-
-.invitation-tagline {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(0.5rem, 1.6vw, 0.625rem) !important;
-  letter-spacing: 0.3em !important;
-  text-transform: uppercase !important;
-  line-height: 1.85 !important;
-  max-width: 22rem;
-  margin: 0 auto 1.75rem !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-}
-
 .invitation-venue {
   font-family: 'Great Vibes', cursive !important;
   font-size: clamp(1.25rem, 3.2vw, 1.625rem) !important;
@@ -850,88 +797,68 @@
   padding: 2rem 1.25rem 2.5rem;
   text-align: center;
   border-top: 1px solid rgba(46, 46, 46, 0.15);
-}
 
-.invitation-white-space .countdown-heading {
-  color: rgba(46, 46, 46, 0.75) !important;
-}
+  .countdown-heading {
+    font-family: 'Playfair Display', serif !important;
+    font-size: clamp(0.45rem, 1.4vw, 0.5625rem) !important;
+    letter-spacing: 0.3em !important;
+    text-transform: uppercase !important;
+    color: rgba(46, 46, 46, 0.75) !important;
+    margin-bottom: 1rem !important;
+    display: block;
+  }
 
-.invitation-white-space .countdown-value {
-  color: #2e2e2e !important;
-}
+  .countdown-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.4rem;
+    margin-bottom: 0.75rem;
+  }
 
-.invitation-white-space .countdown-label {
-  color: rgba(46, 46, 46, 0.65) !important;
-}
+  .countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 3.5rem;
+  }
 
-.invitation-white-space .countdown-separator {
-  color: rgba(46, 46, 46, 0.35) !important;
-}
+  .countdown-value {
+    font-family: 'Playfair Display', serif !important;
+    font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    color: #2e2e2e !important;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.06em;
+  }
 
-.invitation-white-space .countdown-date {
-  color: rgba(46, 46, 46, 0.65) !important;
-}
+  .countdown-label {
+    font-family: 'Playfair Display', serif !important;
+    font-size: clamp(0.4rem, 1.2vw, 0.5rem) !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: rgba(46, 46, 46, 0.65) !important;
+    margin-top: 0.35rem !important;
+  }
 
-.countdown-heading {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(0.45rem, 1.4vw, 0.5625rem) !important;
-  letter-spacing: 0.3em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  margin-bottom: 1rem !important;
-  display: block;
-}
+  .countdown-separator {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.25rem !important;
+    color: rgba(46, 46, 46, 0.35) !important;
+    line-height: 1;
+    padding-bottom: 0.85rem;
+    user-select: none;
+  }
 
-.countdown-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.25rem 0.4rem;
-  margin-bottom: 0.75rem;
-}
-
-.countdown-unit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 3.5rem;
-}
-
-.countdown-value {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
-  font-weight: 400 !important;
-  line-height: 1 !important;
-  color: #fff !important;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.06em;
-}
-
-.countdown-label {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(0.4rem, 1.2vw, 0.5rem) !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.75) !important;
-  margin-top: 0.35rem !important;
-}
-
-.countdown-separator {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1.25rem !important;
-  color: rgba(255, 255, 255, 0.45) !important;
-  line-height: 1;
-  padding-bottom: 0.85rem;
-  user-select: none;
-}
-
-.countdown-date {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(0.45rem, 1.3vw, 0.5625rem) !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.75) !important;
+  .countdown-date {
+    font-family: 'Playfair Display', serif !important;
+    font-size: clamp(0.45rem, 1.3vw, 0.5625rem) !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: rgba(46, 46, 46, 0.65) !important;
+  }
 }
 
 @media (max-width: 768px) {

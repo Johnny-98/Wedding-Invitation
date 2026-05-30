@@ -1,11 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 
 import App from './App';
 import './i18n';
-import { store } from './store';
 
 vi.mock('@/components/WeddingCountdown', () => ({
   WeddingCountdown: () => <div data-testid="wedding-countdown">Countdown</div>,
@@ -14,11 +12,9 @@ vi.mock('@/components/WeddingCountdown', () => ({
 describe('App', () => {
   it('renders the envelope and opens the invitation', () => {
     render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Provider>,
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>,
     );
 
     expect(screen.getByText(/Click to open/i)).toBeInTheDocument();

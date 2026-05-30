@@ -8,18 +8,22 @@ interface WeddingLayoutProps {
   children: ReactNode;
   open?: boolean;
   onBack?: () => void;
+  backTo?: string;
 }
 
 export function WeddingLayout({
   children,
   open = false,
   onBack,
+  backTo,
 }: WeddingLayoutProps) {
+  const showBack = open && (onBack || backTo);
+
   return (
     <Box className={`wedding-page${open ? ' wedding-page--open' : ''}`}>
       <Box className="wedding-bg" aria-hidden />
       <LanguageSwitcher />
-      {open && onBack && <InvitationBackButton onBack={onBack} />}
+      {showBack && <InvitationBackButton onBack={onBack} to={backTo} />}
       {children}
     </Box>
   );
