@@ -542,6 +542,49 @@
   background: #fff;
 }
 
+.wedding-program {
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 0;
+  text-align: center;
+}
+
+.program-heading {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #2e2e2e !important;
+  line-height: 1.35 !important;
+  margin-bottom: 0.75rem !important;
+  display: block;
+}
+
+.program-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: clamp(10rem, 28vw, 14rem);
+  border-radius: 0.35rem;
+  border: 1px solid rgba(46, 46, 46, 0.12);
+  background: rgba(130, 130, 130, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.program-coming-soon {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(1rem, 3vw, 1.25rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  margin: 0 !important;
+}
+
 .wedding-location {
   width: 100%;
   max-width: 36rem;

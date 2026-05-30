@@ -5,6 +5,7 @@ import { WeddingCountdown } from '@/components/WeddingCountdown';
 import { EnvelopeMonogram } from '@/components/EnvelopeMonogram';
 import { InvitePaper } from '@/components/InvitePaper';
 import { Location } from '@/components/Location';
+import { Program } from '@/components/Program';
 
 export function WeddingInvitation() {
   const { t } = useTranslation();
@@ -57,6 +58,7 @@ export function WeddingInvitation() {
       )}
 
       <Box className="invitation-white-space">
+        <Program />
         <Location />
         <WeddingCountdown />
       </Box>

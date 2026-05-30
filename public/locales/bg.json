@@ -22,6 +22,10 @@
     "month": "Септ",
     "timePrefix": "В"
   },
+  "program": {
+    "heading": "Програма",
+    "comingSoon": "Очаквайте скоро"
+  },
   "location": {
     "heading": "Локация",
     "mapTitle": "Карта на мястото на церемонията",

@@ -22,6 +22,10 @@
     "month": "Sept",
     "timePrefix": "At"
   },
+  "program": {
+    "heading": "Program",
+    "comingSoon": "Coming soon"
+  },
   "location": {
     "heading": "Location",
     "mapTitle": "Wedding venue map",
