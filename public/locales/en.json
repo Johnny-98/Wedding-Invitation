@@ -1,10 +1,8 @@
 {
-  "eyebrow": "Together with their families",
   "bride": "Iren",
-  "and": "and",
+  "and": "&",
   "groom": "Peter",
   "tagline": "Invite you to share in their wedding celebration",
-  "dateTime": "Friday, 18 September 2026 at 5:00 PM",
   "venue": "",
   "address": "",
   "footer": "",
@@ -19,10 +17,14 @@
     "back": "Back",
     "backLabel": "Back to envelope"
   },
+  "invitePaper": {
+    "weekday": "Friday",
+    "month": "Sept",
+    "timePrefix": "At"
+  },
   "countdown": {
     "headingBefore": "Counting down to our wedding",
     "headingAfter": "Time since our wedding",
-    "date": "18 September 2026 · 5:00 PM",
     "day_one": "Day",
     "day_other": "Days",
     "hours": "Hours",

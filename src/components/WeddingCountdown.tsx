@@ -1,10 +1,8 @@
 import { Box, Typography } from '@mui/material';
-import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 
+import { formatCountdownDate, WEDDING_DATE } from '@/constants/weddingDate';
 import { useCountdown } from '@/hooks/useCountdown';
-
-const WEDDING_DATE = dayjs('2026-09-18T17:00:00');
 
 interface TimeUnitProps {
   value: number;
@@ -61,7 +59,7 @@ export function WeddingCountdown() {
       </Box>
 
       <Typography className="countdown-date" variant="body2">
-        {t('countdown.date')}
+        {formatCountdownDate(t)}
       </Typography>
     </Box>
   );

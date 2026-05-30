@@ -54,9 +54,7 @@ export function WeddingEnvelope({
             </Box>
 
             <Typography className="envelope-names" component="h1" variant="h1">
-              {t('bride')}
-              <span className="envelope-plus">+</span>
-              {t('groom')}
+              {t('bride')} {t('and')} {t('groom')}
             </Typography>
 
             <Typography className="envelope-subtitle" component="p">
