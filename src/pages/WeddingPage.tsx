@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Box } from '@mui/material';
 
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { InvitationBackButton } from '@/components/InvitationBackButton';
 import { WeddingEnvelope } from '@/components/WeddingEnvelope';
 import { WeddingInvitation } from '@/components/WeddingInvitation';
 
@@ -12,6 +13,8 @@ export function WeddingPage() {
     <Box className={`wedding-page${isOpen ? ' wedding-page--open' : ''}`}>
       <Box className="wedding-bg" aria-hidden />
       <LanguageSwitcher />
+
+      {isOpen && <InvitationBackButton onBack={() => setIsOpen(false)} />}
 
       {isOpen ? (
         <WeddingInvitation />

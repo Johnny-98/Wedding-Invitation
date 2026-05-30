@@ -14,6 +14,10 @@
     "gettingMarried": "are getting married",
     "saveTheDate": "Save the Date"
   },
+  "invitation": {
+    "back": "Back",
+    "backLabel": "Back to envelope"
+  },
   "countdown": {
     "headingBefore": "Counting down to our wedding",
     "headingAfter": "Time since our wedding",

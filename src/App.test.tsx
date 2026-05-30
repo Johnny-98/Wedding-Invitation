@@ -30,5 +30,12 @@ describe('App', () => {
     );
 
     expect(screen.getByTestId('wedding-countdown')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Back to envelope/i }),
+    ).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: /Back to envelope/i }));
+
+    expect(screen.getByText(/Click to open/i)).toBeInTheDocument();
   });
 });

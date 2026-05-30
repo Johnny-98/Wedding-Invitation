@@ -11,8 +11,12 @@
   "envelope": {
     "clickToOpen": "Натиснете, за да отворите",
     "openLabel": "Отвори сватбената покана",
-    "gettingMarried": "се оженват",
+    "gettingMarried": "се женят",
     "saveTheDate": "Запазете датата"
+  },
+  "invitation": {
+    "back": "Назад",
+    "backLabel": "Обратно към плика"
   },
   "countdown": {
     "headingBefore": "Остава до нашата сватба",
