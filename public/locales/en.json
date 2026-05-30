@@ -31,6 +31,24 @@
     "mapTitle": "Wedding venue map",
     "openInMaps": "Open location in Google Maps"
   },
+  "rsvp": {
+    "celebrationLine1": "We can't wait",
+    "celebrationLine2": "to celebrate with you!",
+    "clickToRespond": "Click here to respond",
+    "deadline": "Respond by July 1st",
+    "openForm": "Open RSVP form",
+    "backLabel": "Back to invitation",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "attending": "Will you attend?",
+      "attendingYes": "Yes, with pleasure",
+      "attendingNo": "Sorry, can't make it",
+      "guests": "Number of guests",
+      "message": "Message or dietary requirements",
+      "submit": "Send response"
+    }
+  },
   "countdown": {
     "headingBefore": "Counting down to our wedding",
     "headingAfter": "Time since our wedding",

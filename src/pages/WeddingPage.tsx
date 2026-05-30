@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { InvitationBackButton } from '@/components/InvitationBackButton';
@@ -7,8 +8,15 @@ import { WeddingEnvelope } from '@/components/WeddingEnvelope';
 import { WeddingInvitation } from '@/components/WeddingInvitation';
 
 export function WeddingPage() {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [animateEnvelopeIn, setAnimateEnvelopeIn] = useState(false);
+
+  useEffect(() => {
+    if (location.state?.openInvitation) {
+      setIsOpen(true);
+    }
+  }, [location.state]);
 
   const handleOpen = () => {
     setAnimateEnvelopeIn(false);
