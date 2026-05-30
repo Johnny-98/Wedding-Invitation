@@ -1,5 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import dayjs from 'dayjs';
+import { useTranslation } from 'react-i18next';
+
 import { useCountdown } from '@/hooks/useCountdown';
 
 const WEDDING_DATE = dayjs('2026-09-18T17:00:00');
@@ -28,37 +30,38 @@ function TimeUnit({ value, label, showSign, isNegative }: TimeUnitProps) {
 }
 
 export function WeddingCountdown() {
+  const { t } = useTranslation();
   const { days, hours, minutes, seconds, isPast } = useCountdown(WEDDING_DATE);
 
   return (
     <Box className="wedding-countdown" component="section" aria-live="polite">
       <Typography className="countdown-heading" variant="overline">
-        {isPast ? 'Time since our wedding' : 'Counting down to our wedding'}
+        {isPast ? t('countdown.headingAfter') : t('countdown.headingBefore')}
       </Typography>
 
       <Box className="countdown-grid" role="timer">
         <TimeUnit
           value={days}
-          label={days === 1 ? 'Day' : 'Days'}
+          label={t('countdown.day', { count: Math.abs(days) })}
           showSign
           isNegative={isPast}
         />
         <Typography className="countdown-separator" aria-hidden>
           :
         </Typography>
-        <TimeUnit value={hours} label="Hours" />
+        <TimeUnit value={hours} label={t('countdown.hours')} />
         <Typography className="countdown-separator" aria-hidden>
           :
         </Typography>
-        <TimeUnit value={minutes} label="Minutes" />
+        <TimeUnit value={minutes} label={t('countdown.minutes')} />
         <Typography className="countdown-separator" aria-hidden>
           :
         </Typography>
-        <TimeUnit value={seconds} label="Seconds" />
+        <TimeUnit value={seconds} label={t('countdown.seconds')} />
       </Box>
 
       <Typography className="countdown-date" variant="body2">
-        18 September 2026 · 17:00
+        {t('countdown.date')}
       </Typography>
     </Box>
   );

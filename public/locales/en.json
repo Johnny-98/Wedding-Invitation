@@ -1,3 +1,32 @@
 {
-  "welcome": "Welcome"
+  "eyebrow": "Together with their families",
+  "bride": "Iren",
+  "and": "and",
+  "groom": "Peter",
+  "tagline": "Invite you to share in their wedding celebration",
+  "dateTime": "Thursday, 18 September 2026 at 5:00 PM",
+  "venue": "",
+  "address": "",
+  "footer": "",
+  "envelope": {
+    "clickToOpen": "Click to open",
+    "openLabel": "Open wedding invitation",
+    "gettingMarried": "are getting married",
+    "saveTheDate": "Save the Date"
+  },
+  "countdown": {
+    "headingBefore": "Counting down to our wedding",
+    "headingAfter": "Time since our wedding",
+    "date": "18 September 2026 · 5:00 PM",
+    "day_one": "Day",
+    "day_other": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "language": {
+    "switchToEnglish": "English",
+    "switchToBulgarian": "Български",
+    "label": "Language"
+  }
 }
