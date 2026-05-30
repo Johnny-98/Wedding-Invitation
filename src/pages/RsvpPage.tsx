@@ -16,8 +16,7 @@ export function RsvpPage() {
         <Button
           className="invitation-back-button"
           component={Link}
-          to="/"
-          state={{ openInvitation: true }}
+          to="/invitation"
           aria-label={t('rsvp.backLabel')}
         >
           {t('invitation.back')}
