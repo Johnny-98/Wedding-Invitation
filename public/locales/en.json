@@ -22,6 +22,11 @@
     "month": "Sept",
     "timePrefix": "At"
   },
+  "location": {
+    "heading": "Location",
+    "mapTitle": "Wedding venue map",
+    "openInMaps": "Open location in Google Maps"
+  },
   "countdown": {
     "headingBefore": "Counting down to our wedding",
     "headingAfter": "Time since our wedding",

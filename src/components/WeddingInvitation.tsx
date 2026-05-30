@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { WeddingCountdown } from '@/components/WeddingCountdown';
 import { EnvelopeMonogram } from '@/components/EnvelopeMonogram';
 import { InvitePaper } from '@/components/InvitePaper';
+import { Location } from '@/components/Location';
 
 export function WeddingInvitation() {
   const { t } = useTranslation();
@@ -56,6 +57,7 @@ export function WeddingInvitation() {
       )}
 
       <Box className="invitation-white-space">
+        <Location />
         <WeddingCountdown />
       </Box>
     </Box>

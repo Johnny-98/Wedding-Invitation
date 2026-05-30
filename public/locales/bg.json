@@ -22,6 +22,11 @@
     "month": "Септ",
     "timePrefix": "В"
   },
+  "location": {
+    "heading": "Локация",
+    "mapTitle": "Карта на мястото на церемонията",
+    "openInMaps": "Отвори локацията в Google Maps"
+  },
   "countdown": {
     "headingBefore": "Остава до нашата сватба",
     "headingAfter": "От нашата сватба мина",
