@@ -30,7 +30,12 @@ export function InvitePaper() {
             </Typography>
 
             <Typography className="invite-paper-tagline" component="p">
-              {t('tagline')}
+              <span className="invite-paper-tagline-line">
+                {t('taglineLine1')}
+              </span>{' '}
+              <span className="invite-paper-tagline-line">
+                {t('taglineLine2')}
+              </span>
             </Typography>
           </Box>
 
