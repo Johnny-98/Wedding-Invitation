@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+.wedding-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #faf7f2 0%, #f3ebe0 45%, #ebe2d4 100%);
+  color: #3d3429;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wedding-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.wedding-eyebrow {
+  letter-spacing: 0.35em;
+  color: #8a7a68;
+  margin-bottom: 2rem;
+  font-size: 0.7rem;
+}
+
+.wedding-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(2.75rem, 8vw, 5rem);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.wedding-ampersand {
+  font-style: italic;
+  font-size: 0.65em;
+  color: #a6896b;
+  margin: 0.15em 0;
+}
+
+.wedding-tagline {
+  font-weight: 300;
+  color: #6b5f52;
+  max-width: 32rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.wedding-details {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(166, 137, 107, 0.35);
+  display: inline-block;
+}
+
+.wedding-detail-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.wedding-detail-time {
+  margin-top: 0.5rem;
+  color: #8a7a68;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.wedding-countdown {
+  padding: 2rem 1.5rem 2.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.45);
+  border-top: 1px solid rgba(166, 137, 107, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.countdown-heading {
+  letter-spacing: 0.28em;
+  color: #8a7a68;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4.5rem;
+}
+
+.countdown-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1;
+  color: #3d3429;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8a7a68;
+  margin-top: 0.35rem;
+}
+
+.countdown-separator {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #a6896b;
+  line-height: 1;
+  padding-bottom: 1.1rem;
+  user-select: none;
+}
+
+.countdown-date {
+  color: #8a7a68;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 480px) {
+  .countdown-separator {
+    display: none;
+  }
+
+  .countdown-grid {
+    gap: 0.75rem 1rem;
+  }
+
+  .countdown-unit {
+    min-width: 3.75rem;
+  }
+}

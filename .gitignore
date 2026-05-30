@@ -1,0 +1,51 @@
+# dependencies
+node_modules
+
+# production build
+build
+dist
+
+# Vite
+.vite
+*.local
+
+# environment (never commit secrets)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.staging.local
+.env.production.local
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# testing
+coverage
+
+# tooling cache
+.eslintcache
+circular-deps.json
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# editor / IDE
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+
+# optional — uncomment if you don't want these on GitHub
+# .cursor/
+# .husky/_/
