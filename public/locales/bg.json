@@ -6,7 +6,7 @@
   "address": "",
   "footer": "",
   "envelope": {
-    "clickToOpen": "Натиснете, за да отворите",
+    "clickToOpen": "Кликнете за да отговорите",
     "openLabel": "Отвори сватбената покана",
     "gettingMarried": "се женят",
     "monogram": "И&П",
@@ -33,7 +33,7 @@
   "rsvp": {
     "celebrationLine1": "Нямаме търпение",
     "celebrationLine2": "да празнуваме с вас!",
-    "clickToRespond": "Натиснете тук, за да отговорите",
+    "clickToRespond": "Кликнете тук, за да отговорите",
     "deadline": "Молим да потвърдите до 1 юли",
     "openForm": "Отвори формуляра за отговор",
     "backLabel": "Обратно към поканата",
