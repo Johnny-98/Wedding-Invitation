@@ -5,13 +5,19 @@ import { EnvelopePostmark } from '@/components/EnvelopePostmark';
 
 interface WeddingEnvelopeProps {
   onOpen: () => void;
+  animateIn?: boolean;
 }
 
-export function WeddingEnvelope({ onOpen }: WeddingEnvelopeProps) {
+export function WeddingEnvelope({
+  onOpen,
+  animateIn = false,
+}: WeddingEnvelopeProps) {
   const { t } = useTranslation();
 
   return (
-    <Box className="envelope-stage">
+    <Box
+      className={`envelope-stage${animateIn ? ' envelope-stage--enter' : ''}`}
+    >
       <Typography className="envelope-hint" component="p">
         {t('envelope.clickToOpen')}
       </Typography>

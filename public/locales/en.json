@@ -4,7 +4,7 @@
   "and": "and",
   "groom": "Peter",
   "tagline": "Invite you to share in their wedding celebration",
-  "dateTime": "Thursday, 18 September 2026 at 5:00 PM",
+  "dateTime": "Friday, 18 September 2026 at 5:00 PM",
   "venue": "",
   "address": "",
   "footer": "",
@@ -12,6 +12,7 @@
     "clickToOpen": "Click to open",
     "openLabel": "Open wedding invitation",
     "gettingMarried": "are getting married",
+    "monogram": "I&P",
     "saveTheDate": "Save the Date"
   },
   "invitation": {

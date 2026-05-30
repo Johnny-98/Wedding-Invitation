@@ -8,18 +8,30 @@ import { WeddingInvitation } from '@/components/WeddingInvitation';
 
 export function WeddingPage() {
   const [isOpen, setIsOpen] = useState(false);
+  const [animateEnvelopeIn, setAnimateEnvelopeIn] = useState(false);
+
+  const handleOpen = () => {
+    setAnimateEnvelopeIn(false);
+    setIsOpen(true);
+  };
+
+  const handleBack = () => {
+    setIsOpen(false);
+    setAnimateEnvelopeIn(true);
+    window.setTimeout(() => setAnimateEnvelopeIn(false), 600);
+  };
 
   return (
     <Box className={`wedding-page${isOpen ? ' wedding-page--open' : ''}`}>
       <Box className="wedding-bg" aria-hidden />
       <LanguageSwitcher />
 
-      {isOpen && <InvitationBackButton onBack={() => setIsOpen(false)} />}
+      {isOpen && <InvitationBackButton onBack={handleBack} />}
 
       {isOpen ? (
         <WeddingInvitation />
       ) : (
-        <WeddingEnvelope onOpen={() => setIsOpen(true)} />
+        <WeddingEnvelope animateIn={animateEnvelopeIn} onOpen={handleOpen} />
       )}
     </Box>
   );

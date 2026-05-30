@@ -38,11 +38,11 @@
 .language-switcher-button {
   color: #2e2e2e !important;
   font-family: 'Playfair Display', serif !important;
-  font-size: 0.6rem !important;
+  font-size: 0.85rem !important;
   font-weight: 400 !important;
   letter-spacing: 0.28em !important;
   text-transform: uppercase !important;
-  padding: 0.25rem 0.5rem !important;
+  padding: 0.45rem 0.85rem !important;
   min-width: unset !important;
   opacity: 0.85;
 
@@ -63,16 +63,15 @@
 }
 
 .invitation-back-button {
-  color: #fff !important;
+  color: #2e2e2e !important;
   font-family: 'Playfair Display', serif !important;
-  font-size: 0.6rem !important;
+  font-size: 0.85rem !important;
   font-weight: 400 !important;
   letter-spacing: 0.28em !important;
   text-transform: uppercase !important;
-  padding: 0.25rem 0.5rem !important;
+  padding: 0.45rem 0.85rem !important;
   min-width: unset !important;
-  opacity: 0.9;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  opacity: 0.85;
 
   &:hover {
     background: transparent !important;
@@ -91,6 +90,10 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 1.25rem 2.5rem;
+}
+
+.envelope-stage--enter {
+  animation: invitation-fade-in 0.6s ease;
 }
 
 .envelope-hint {
@@ -140,6 +143,30 @@
   text-align: center;
   padding: 2.5rem 1.75rem 2rem;
   line-height: normal;
+}
+
+.envelope-monogram {
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-family: 'Great Vibes', cursive !important;
+  font-size: clamp(2.75rem, 9vw, 4.75rem) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em;
+  color: #ebebeb !important;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.9), 0 2px 6px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  user-select: none;
+  margin: 0 !important;
+}
+
+.envelope-monogram--open {
+  top: 70%;
+  font-size: clamp(2.5rem, 8vw, 4.25rem) !important;
 }
 
 .envelope-stamp-area {
@@ -246,11 +273,81 @@
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  width: 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 4.5rem 1.25rem 2.5rem;
+  flex-direction: column;
   animation: invitation-fade-in 0.6s ease;
+}
+
+.invitation-envelope {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 3.25rem 1.25rem 0;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.invitation-envelope-stack {
+  position: relative;
+  width: min(98vw, 1000px);
+  line-height: 0;
+  overflow: visible;
+}
+
+.invitation-envelope-back {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.invitation-envelope-stack .envelope-monogram {
+  z-index: 4;
+}
+
+.invitation-invite-paper {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 12%;
+  transform: translateX(-50%);
+  width: 72%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.invitation-envelope-front {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.invitation-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40vh;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.invitation-white-space {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 30vh; //percent
+  background: #fff;
 }
 
 @keyframes invitation-fade-in {
@@ -266,6 +363,9 @@
 }
 
 .invitation-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   max-width: 36rem;
   text-align: center;
@@ -317,15 +417,6 @@
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.invitation-datetime {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(0.5rem, 1.6vw, 0.625rem) !important;
-  letter-spacing: 0.26em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-  margin-bottom: 1.25rem !important;
-}
-
 .invitation-venue {
   font-family: 'Great Vibes', cursive !important;
   font-size: clamp(1.25rem, 3.2vw, 1.625rem) !important;
@@ -353,10 +444,32 @@
 
 .wedding-countdown {
   width: 100%;
-  padding: 1.5rem 0 0;
+  max-width: 36rem;
+  margin: 0 auto;
+  flex-shrink: 0;
+  padding: 1.25rem 1.25rem 2rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 0.5rem;
+  border-top: 1px solid rgba(46, 46, 46, 0.15);
+}
+
+.invitation-white-space .countdown-heading {
+  color: rgba(46, 46, 46, 0.75) !important;
+}
+
+.invitation-white-space .countdown-value {
+  color: #2e2e2e !important;
+}
+
+.invitation-white-space .countdown-label {
+  color: rgba(46, 46, 46, 0.65) !important;
+}
+
+.invitation-white-space .countdown-separator {
+  color: rgba(46, 46, 46, 0.35) !important;
+}
+
+.invitation-white-space .countdown-date {
+  color: rgba(46, 46, 46, 0.65) !important;
 }
 
 .countdown-heading {
