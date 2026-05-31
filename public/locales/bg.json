@@ -1,7 +1,7 @@
 {
   "coupleNames": "Ирен & Петър",
   "taglineLine1": "Имаме удоволствието да ви поканим",
-  "taglineLine2": "на нашата сватбена церемония",
+  "taglineLine2": "на нашата сватба",
   "venue": "",
   "address": "",
   "footer": "",
@@ -61,5 +61,10 @@
     "switchToEnglish": "English",
     "switchToBulgarian": "Български",
     "label": "Език"
+  },
+  "music": {
+    "play": "Пусни",
+    "pause": "Пауза",
+    "label": "Фонова музика"
   }
 }

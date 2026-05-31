@@ -17,22 +17,22 @@ describe('App', () => {
       </BrowserRouter>,
     );
 
-    expect(screen.getByText(/Click to open/i)).toBeInTheDocument();
+    expect(screen.getByText(/Кликнете за да отговорите/i)).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: /Iren & Peter/i }),
+      screen.getByRole('heading', { name: /Ирен & Петър/i }),
     ).toBeInTheDocument();
 
     fireEvent.click(
-      screen.getByRole('button', { name: /Open wedding invitation/i }),
+      screen.getByRole('button', { name: /Отвори сватбената покана/i }),
     );
 
     expect(screen.getByTestId('wedding-countdown')).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /Back to envelope/i }),
+      screen.getByRole('button', { name: /Обратно към плика/i }),
     ).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: /Back to envelope/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Обратно към плика/i }));
 
-    expect(screen.getByText(/Click to open/i)).toBeInTheDocument();
+    expect(screen.getByText(/Кликнете за да отговорите/i)).toBeInTheDocument();
   });
 });

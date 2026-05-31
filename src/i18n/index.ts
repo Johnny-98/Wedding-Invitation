@@ -5,7 +5,7 @@ import bg from '../../public/locales/bg.json';
 import en from '../../public/locales/en.json';
 
 i18n.use(initReactI18next).init({
-  lng: 'en',
+  lng: 'bg',
   fallbackLng: 'en',
   supportedLngs: ['en', 'bg'],
   interpolation: {

@@ -8,7 +8,7 @@ export function RsvpPage() {
   const { t } = useTranslation();
 
   return (
-    <WeddingLayout open backTo="/invitation">
+    <WeddingLayout open>
       <Box className="rsvp-page">
         <iframe
           className="rsvp-form-embed"

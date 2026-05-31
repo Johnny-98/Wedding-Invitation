@@ -61,5 +61,10 @@
     "switchToEnglish": "English",
     "switchToBulgarian": "Български",
     "label": "Language"
+  },
+  "music": {
+    "play": "Play",
+    "pause": "Pause",
+    "label": "Background music"
   }
 }
