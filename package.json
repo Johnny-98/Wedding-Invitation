@@ -24,7 +24,7 @@
   "scripts": {
     "start": "vite",
     "start-dev": "vite --mode development",
-    "build": "vite --mode development build",
+    "build": "vite build",
     "build-s3": "vite build",
     "build-s3-test": "vite --mode staging build",
     "test": "vitest",
