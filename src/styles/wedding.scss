@@ -657,77 +657,12 @@
   background: #fff;
 }
 
-.rsvp-page-deadline {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(1rem, 3vw, 1.25rem) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  color: #2e2e2e !important;
-  margin: 0 0 1.5rem !important;
-  text-align: center;
-}
-
-.rsvp-form {
+.rsvp-form-embed {
   width: 100%;
-  max-width: 24rem;
-}
-
-.rsvp-field {
-  .MuiInputLabel-root {
-    font-family: 'Playfair Display', serif !important;
-    letter-spacing: 0.06em !important;
-    background: #fff;
-    padding: 0 0.35rem;
-    margin-left: -0.15rem;
-
-    &.MuiInputLabel-shrink {
-      letter-spacing: 0.04em !important;
-    }
-  }
-
-  .MuiInputBase-root {
-    font-family: 'Playfair Display', serif !important;
-    color: #2e2e2e !important;
-    background: #fff;
-  }
-
-  .MuiOutlinedInput-notchedOutline {
-    border-color: rgba(46, 46, 46, 0.25) !important;
-
-    legend {
-      max-width: 0.01px;
-    }
-  }
-
-  .MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline {
-    border-color: rgba(46, 46, 46, 0.45) !important;
-  }
-
-  .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: #2e2e2e !important;
-  }
-}
-
-.rsvp-submit {
-  display: block !important;
-  width: 100%;
-  margin-top: 1.5rem !important;
-  padding: 0.75rem 1rem !important;
-  font-family: 'Playfair Display', serif !important;
-  font-size: 0.875rem !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  color: #2e2e2e !important;
-  border: 1px solid rgba(46, 46, 46, 0.35) !important;
-  border-radius: 0.35rem !important;
-  background: transparent !important;
-
-  &:hover {
-    background: rgba(46, 46, 46, 0.05) !important;
-    border-color: rgba(46, 46, 46, 0.5) !important;
-  }
+  max-width: 40rem;
+  min-height: 75vh;
+  height: 1200px;
+  border: 0;
 }
 
 @keyframes invitation-fade-in {
@@ -1045,6 +980,10 @@
 
   .rsvp-page {
     padding: 4.5rem 1rem 2rem;
+  }
+
+  .rsvp-form-embed {
+    height: 1100px;
   }
 
   .wedding-countdown {
