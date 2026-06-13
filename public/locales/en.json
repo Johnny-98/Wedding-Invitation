@@ -36,6 +36,8 @@
     "comingSoon": "Coming soon"
   },
   "loveStory": {
+    "headingScript": "TheLove",
+    "headingSerif": "STORY",
     "photoAlt": "Iren and Peter",
     "paragraph1": "Once upon a time, two hearts found each other among millions of others, and fate decreed that they would be together forever.",
     "paragraph2": "Dear family and friends, with great joy we invite you to join us and share the day when we celebrate our love and the beginning of our family!",
@@ -73,7 +75,7 @@
     "celebrationLine1": "We can't wait",
     "celebrationLine2": "to celebrate with you!",
     "clickToRespond": "Click here to respond",
-    "deadline": "Respond by July 1st",
+    "deadline": "Respond by July 30th",
     "openForm": "Open RSVP form",
     "backLabel": "Back to invitation",
     "form": {
@@ -85,6 +87,66 @@
       "guests": "Number of guests",
       "message": "Message or dietary requirements",
       "submit": "Send response"
+    }
+  },
+  "rsvpBanner": {
+    "heading": "RSVP",
+    "deadlineScript": "by July 30, 2026",
+    "body": "We can't wait to celebrate our wedding with you! Your presence means the world to us, and we're thrilled to share our special day with our cherished family and friends."
+  },
+  "schedule": {
+    "headingSerif": "SCHEDULED",
+    "headingScript": "Events",
+    "listLabel": "Wedding day schedule",
+    "events": {
+      "ceremony": {
+        "time": "4:30 PM",
+        "label": "Wedding Ceremony"
+      },
+      "cocktailHour": {
+        "time": "5:30 PM",
+        "label": "Cocktail Hour"
+      },
+      "reception": {
+        "time": "6:30 PM",
+        "label": "Reception"
+      },
+      "afterparty": {
+        "time": "9:00 PM",
+        "label": "Afterparty"
+      }
+    }
+  },
+  "otherDetails": {
+    "heading": "Other Details",
+    "travel": {
+      "label": "Travel",
+      "body": "We recommend flying into Kahului Airport (OGG)"
+    },
+    "accommodation": {
+      "label": "Accommodation",
+      "body": "A select number of rooms have been set aside at Maui Coast Resort. Kindly RSVP to help us confirm that all our guests have secured their accommodations."
+    },
+    "dressCode": {
+      "label": "Dress Code",
+      "body": "Please wear cocktail or semi-formal attire—chic yet comfortable for the celebrations. Kindly avoid wearing white."
+    }
+  },
+  "faqs": {
+    "heading": "FAQS",
+    "items": {
+      "children": {
+        "question": "Are children allowed?",
+        "answer": "We truly adore your children, but this celebration will be exclusively for adults. We hope you can take the opportunity to enjoy a night out with us!"
+      },
+      "dietary": {
+        "question": "What if I have dietary restrictions?",
+        "answer": "We aim to make sure that all our guests can savor their meals at the reception. Therefore, please let us know if you or anyone in your party has any dietary requirements or food allergies."
+      },
+      "phones": {
+        "question": "May we use our phones during the ceremony?",
+        "answer": "Please keep your phones away during the ceremony, as we have professionals capturing our special day. Afterward, feel free to take photos and videos to help create cherished memories!"
+      }
     }
   },
   "countdown": {

@@ -2,7 +2,8 @@ import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 export function LoveStory() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isBulgarian = i18n.language.startsWith('bg');
 
   return (
     <Box
@@ -25,16 +26,16 @@ export function LoveStory() {
 
         <Box className="love-story__content">
           <Box className="love-story__heading" id="love-story-heading">
-            <Typography className="love-story__heading-script" component="span">
-              The Love
-            </Typography>
-            <Typography
-              className="love-story__heading-serif"
-              component="span"
-              aria-hidden="true"
+            <span
+              className={`love-story__heading-script${
+                isBulgarian ? ' love-story__heading-script--bg' : ''
+              }`}
             >
-              STORY
-            </Typography>
+              {t('loveStory.headingScript')}
+            </span>
+            <span className="love-story__heading-serif">
+              {t('loveStory.headingSerif')}
+            </span>
           </Box>
 
           <Box className="love-story__body">

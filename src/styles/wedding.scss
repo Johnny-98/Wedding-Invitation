@@ -312,8 +312,8 @@
   width: 100%;
   background: #bfa993;
   min-height: clamp(72vh, 78vh, 82vh);
-  padding: clamp(2rem, 4vh, 3rem) clamp(1.75rem, 4.5vw, 4rem)
-    clamp(5rem, 11vh, 8rem);
+  padding: clamp(3rem, 6vh, 4.5rem) clamp(1.75rem, 4.5vw, 4rem);
+  --love-story-column-height: clamp(36rem, 65vh, 49rem);
 }
 
 .love-story__inner {
@@ -334,14 +334,14 @@
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
-  min-height: 0;
+  min-height: var(--love-story-column-height);
 }
 
 .love-story__frame {
   --frame-border-width: 3px;
-  --frame-outer-border-width: calc(2 * var(--frame-border-width));
+  --frame-outer-border-width: 6px;
   --frame-gap: clamp(8px, 11px, 13px);
-  --frame-border-gap: clamp(0.35rem, 0.75vw, 0.5rem);
+  --frame-border-gap: 8px;
 
   position: relative;
   width: fit-content;
@@ -392,48 +392,65 @@
 
 .love-story__content {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
+  flex-shrink: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-self: center;
   text-align: center;
-  min-width: 0;
-  max-width: min(32rem, 42vw);
+  width: min(32rem, 42vw);
+  min-height: var(--love-story-column-height);
 }
 
 .love-story__heading {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
   margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .love-story__heading-script {
   @include font-champagne-cyrillic;
   display: block;
-  font-size: clamp(3rem, 8vw, 5.5rem) !important;
+  width: 100%;
+  font-size: clamp(4rem, 10vw, 6.5rem) !important;
   font-weight: 400 !important;
   line-height: 0.95 !important;
+  letter-spacing: 0 !important;
   color: #fff !important;
-  position: relative;
-  z-index: 2;
+  white-space: nowrap;
+  text-align: center;
+  padding: 0;
   margin: 0 !important;
+  transform: translateX(-25px);
+}
+
+.love-story__heading-script--bg {
+  word-spacing: -0.22em;
 }
 
 .love-story__heading-serif {
   @include font-playfair;
   display: block;
-  font-size: clamp(2.75rem, 7.5vw, 4.75rem) !important;
+  width: 100%;
+  font-size: clamp(2rem, 5.5vw, 3.25rem) !important;
   font-weight: 500 !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
+  text-align: center;
   color: #6a5c4d !important;
   line-height: 0.85 !important;
-  margin: -0.2em 0 0 !important;
-  position: relative;
-  z-index: 1;
+  padding: 0;
+  margin: -0.3em 0 0 !important;
 }
 
 .love-story__body {
   @include font-playfair;
+  width: 100%;
   font-size: clamp(0.7rem, 1.8vw, 0.85rem) !important;
   font-style: italic !important;
   font-weight: 400 !important;
@@ -499,7 +516,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: clamp(11rem, 17vw, 15rem);
+  width: clamp(176px, 17vw, 240px);
 }
 
 .timeline__image-wrap {
@@ -517,7 +534,7 @@
 }
 
 .timeline__image--christian-ceremony {
-  object-position: center calc(42% + 19px);
+  object-position: center top;
 }
 
 .timeline__label {
@@ -539,17 +556,272 @@
   line-height: 1.55 !important;
   color: #fff !important;
   margin: 0 !important;
-  max-width: 16rem;
+  max-width: 256px;
 }
 
-/* ── RSVP ── */
+/* ── FAQs (final section) ── */
 
 .rsvp {
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  background: #fff;
-  min-height: clamp(40vh, 50vh, 60vh);
+  min-height: clamp(70vh, 85vh, 90vh);
+  overflow: hidden;
+  background-color: #bee3e3;
+  background-image: url('/images/rsvp-bg.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: clamp(3rem, 8vh, 5rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.rsvp__overlay {
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+  background: rgba(245, 240, 232, 0.58);
+  text-align: center;
+}
+
+.rsvp__faqs-heading {
+  @include font-playfair;
+  font-size: clamp(3rem, 8vw, 5rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  margin: 0 0 clamp(2.5rem, 6vw, 3.5rem) !important;
+}
+
+.rsvp__faqs-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.rsvp__faq {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.65rem, 1.5vw, 0.9rem);
+}
+
+.rsvp__faq-question {
+  @include font-playfair;
+  font-size: clamp(0.72rem, 1.55vw, 0.88rem) !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  line-height: 1.45 !important;
+  color: #fff !important;
+  margin: 0 !important;
+}
+
+.rsvp__faq-answer {
+  @include font-playfair;
+  font-size: clamp(0.68rem, 1.4vw, 0.82rem) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  line-height: 1.65 !important;
+  color: #fff !important;
+  margin: 0 auto !important;
+  max-width: 36rem;
+}
+
+/* ── RSVP banner ── */
+
+.rsvp-banner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+  min-height: clamp(18rem, 35vh, 26rem);
+  overflow: hidden;
+}
+
+.rsvp-banner__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #bfa993;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.rsvp-banner__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 22rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.88;
+  }
+}
+
+.rsvp-banner__monogram {
+  @include font-playfair;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2.75rem, 6vw, 3.5rem);
+  height: clamp(2.75rem, 6vw, 3.5rem);
+  margin-bottom: clamp(0.85rem, 2vw, 1.25rem);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: clamp(0.85rem, 1.8vw, 1rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  color: #fff !important;
+  line-height: 1 !important;
+}
+
+.rsvp-banner__heading {
+  @include font-playfair;
+  font-size: clamp(3.5rem, 9vw, 5.5rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  line-height: 0.95 !important;
+  color: #fff !important;
+  margin: 0 !important;
+}
+
+.rsvp-banner__deadline {
+  @include font-great-vibes;
+  font-size: clamp(2rem, 5.5vw, 3.25rem) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  margin: -0.2em 0 clamp(0.85rem, 2vw, 1.15rem) !important;
+}
+
+.rsvp-banner__body {
+  @include font-playfair;
+  font-size: clamp(0.68rem, 1.4vw, 0.8rem) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.65 !important;
+  color: #fff !important;
+  margin: 0 !important;
+}
+
+.rsvp-banner__stripes {
+  background: repeating-linear-gradient(
+    90deg,
+    #bfa993 0,
+    #bfa993 28px,
+    #f2efe8 28px,
+    #f2efe8 56px
+  );
+}
+
+/* ── Other details ── */
+
+.other-details {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: #bfa993;
+  padding: clamp(3rem, 8vh, 5rem) clamp(1.25rem, 4vw, 3rem);
+}
+
+.other-details__frame {
+  --other-details-border-width: 1px;
+  --other-details-border-gap: 8px;
+
+  position: relative;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: clamp(0.85rem, 2vw, 1.25rem);
+  background: #bfa993;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    border: var(--other-details-border-width) solid #fff;
+  }
+
+  &::before {
+    inset: 0;
+  }
+
+  &::after {
+    inset: var(--other-details-border-gap);
+  }
+}
+
+.other-details__inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.other-details__heading {
+  @include font-great-vibes;
+  font-size: clamp(3.5rem, 9vw, 6rem) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-align: center;
+  margin: 0 0 clamp(3rem, 7vw, 4.5rem) !important;
+}
+
+.other-details__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.other-details__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.other-details__icon {
+  width: clamp(3.5rem, 8vw, 5rem);
+  height: clamp(3.5rem, 8vw, 5rem);
+  color: #fff;
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.other-details__item-heading {
+  @include font-playfair;
+  font-size: clamp(0.75rem, 1.6vw, 0.9rem) !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  line-height: 1.4 !important;
+  margin: 0 0 clamp(1.35rem, 3vw, 1.85rem) !important;
+}
+
+.other-details__item-body {
+  @include font-playfair;
+  font-size: clamp(0.68rem, 1.45vw, 0.82rem) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  line-height: 1.65 !important;
+  color: #fff !important;
+  margin: 0 !important;
+  max-width: 18rem;
 }
 
 .invitation-section {
@@ -770,7 +1042,7 @@
   }
 
   .timeline__item {
-    width: clamp(12rem, 38vw, 16rem);
+    width: clamp(192px, 38vw, 256px);
   }
 }
 
@@ -844,7 +1116,13 @@
 
   .love-story {
     min-height: auto;
-    padding: clamp(1.5rem, 5vw, 2.25rem) 1rem clamp(3rem, 8vw, 4.5rem);
+    padding: clamp(2rem, 5vw, 3rem) 1rem;
+    --love-story-column-height: auto;
+  }
+
+  .love-story__frame-col,
+  .love-story__content {
+    min-height: auto;
   }
 
   .love-story__inner {
@@ -865,13 +1143,48 @@
 
   .love-story__frame {
     --frame-gap: clamp(6px, 7px, 10px);
-    --frame-border-gap: clamp(0.25rem, 1.5vw, 0.4rem);
+    --frame-border-gap: 6px;
   }
 
   .love-story__frame-inner {
     width: clamp(14rem, 78vw, 20rem);
     height: auto;
     min-height: clamp(18rem, 52vw, 24rem);
+  }
+
+  .rsvp {
+    min-height: clamp(65vh, 80vh, 85vh);
+    padding: clamp(2.5rem, 6vw, 3.5rem) 1rem;
+  }
+
+  .rsvp__overlay {
+    padding: clamp(2rem, 5vw, 2.75rem) clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .rsvp-banner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .rsvp-banner__stripes {
+    min-height: clamp(5rem, 18vw, 7rem);
+  }
+
+  .other-details {
+    padding: clamp(2rem, 6vw, 3rem) 1rem;
+  }
+
+  .other-details__inner {
+    padding: clamp(1.75rem, 5vw, 2.5rem) 1rem;
+  }
+
+  .other-details__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 6vw, 2.75rem);
+  }
+
+  .other-details__item-body {
+    max-width: 22rem;
   }
 
   .timeline {
@@ -887,7 +1200,7 @@
   }
 
   .timeline__item {
-    width: clamp(16.8rem, 86vw, 21.6rem);
+    width: clamp(269px, 86vw, 346px);
   }
 
   .invitation-section {
