@@ -1,36 +1,41 @@
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-
-import { REGISTRY_URL } from '@/constants/registry';
+import { Link } from 'react-router-dom';
 
 export function Rsvp() {
   const { t } = useTranslation();
 
   return (
-    <Box className="rsvp" component="section" aria-labelledby="gifts-heading">
-      <Box className="rsvp__inner">
-        <Box className="rsvp__heading" component="h2" id="gifts-heading">
-          {t('gifts.heading')}
-        </Box>
-
-        <Box className="rsvp__tagline" component="p">
-          {t('gifts.tagline')}
-        </Box>
-
-        <Box className="rsvp__body" component="p">
-          {t('gifts.body')}
-        </Box>
-
-        <a
-          className="rsvp__registry-link"
-          href={REGISTRY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={t('gifts.registryAriaLabel')}
+    <Box
+      className="rsvp-banner"
+      component="section"
+      aria-labelledby="rsvp-banner-heading"
+    >
+      <Box className="rsvp-banner__content">
+        <Link
+          className="rsvp-banner__link"
+          to="/rsvp"
+          aria-label={t('rsvp.openForm')}
         >
-          {t('gifts.registryButton')}
-        </a>
+          <Box
+            className="rsvp-banner__heading"
+            component="h2"
+            id="rsvp-banner-heading"
+          >
+            {t('rsvpBanner.heading')}
+          </Box>
+
+          <Box className="rsvp-banner__deadline" component="p">
+            {t('rsvpBanner.deadlineScript')}
+          </Box>
+
+          <Box className="rsvp-banner__body" component="p">
+            {t('rsvpBanner.body')}
+          </Box>
+        </Link>
       </Box>
+
+      <Box className="rsvp-banner__stripes" aria-hidden="true" />
     </Box>
   );
 }

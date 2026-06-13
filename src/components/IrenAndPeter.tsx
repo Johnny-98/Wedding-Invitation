@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { formatHeroDate } from '@/constants/weddingDate';
 
-export function WeddingInvitation() {
+export function IrenAndPeter() {
   const { t } = useTranslation();
 
   return (

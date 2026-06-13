@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { formatTimelineDate } from '@/constants/weddingDate';
 
-const TIMELINE_ITEMS = [
+const PROGRAM_ITEMS = [
   {
     key: 'date',
     image: '/images/timeline-date.jpg',
@@ -22,7 +22,7 @@ const TIMELINE_ITEMS = [
   },
 ] as const;
 
-export function Timeline() {
+export function WeddingProgram() {
   const { t } = useTranslation();
 
   return (
@@ -41,7 +41,7 @@ export function Timeline() {
         </Typography>
 
         <Box className="timeline__grid">
-          {TIMELINE_ITEMS.map((item) => (
+          {PROGRAM_ITEMS.map((item) => (
             <Box className="timeline__item" key={item.key}>
               <Box className="timeline__image-wrap">
                 <img

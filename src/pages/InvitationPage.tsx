@@ -1,20 +1,20 @@
+import { Gifts } from '@/components/Gifts';
+import { IrenAndPeter } from '@/components/IrenAndPeter';
 import { LoveStory } from '@/components/LoveStory';
 import { OtherDetails } from '@/components/OtherDetails';
 import { Rsvp } from '@/components/Rsvp';
-import { RsvpBanner } from '@/components/RsvpBanner';
-import { Timeline } from '@/components/Timeline';
 import { WeddingLayout } from '@/components/WeddingLayout';
-import { WeddingInvitation } from '@/components/WeddingInvitation';
+import { WeddingProgram } from '@/components/WeddingProgram';
 
 export function InvitationPage() {
   return (
     <WeddingLayout>
-      <WeddingInvitation />
+      <IrenAndPeter />
       <LoveStory />
-      <Timeline />
+      <WeddingProgram />
       <OtherDetails />
+      <Gifts />
       <Rsvp />
-      <RsvpBanner />
     </WeddingLayout>
   );
 }
