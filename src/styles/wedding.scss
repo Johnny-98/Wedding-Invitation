@@ -1,7 +1,20 @@
+@font-face {
+  font-family: 'Champagne Cyrillic';
+  src: url('/fonts/champagne-cyrillic/champagne-cyrillic.woff2') format('woff2'),
+    url('/fonts/champagne-cyrillic/champagne-cyrillic.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 @mixin font-playfair {
   font-family: 'Playfair Display', serif !important;
+}
+
+@mixin font-champagne-cyrillic {
+  font-family: 'Champagne Cyrillic', cursive !important;
 }
 
 @mixin font-great-vibes {
@@ -44,29 +57,11 @@
   }
 }
 
-.wedding-page {
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-  color: #f5f5f5;
-}
-
 .wedding-bg {
   position: fixed;
   inset: 0;
-  background: url('/images/beach-bg.png') center center / cover no-repeat;
+  background: url('/images/waves.gif') center center / cover no-repeat;
   z-index: 0;
-}
-
-.wedding-bg::after {
-  content: none;
-}
-
-.wedding-page--open .wedding-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
 }
 
 .site-header {
@@ -96,6 +91,13 @@
 .language-switcher {
   display: flex;
   justify-content: flex-end;
+}
+
+.site-header--invitation {
+  .language-switcher-button,
+  .background-music-button {
+    color: #fff !important;
+  }
 }
 
 .language-switcher-button {
@@ -158,455 +160,396 @@
   }
 }
 
-/* ── Envelope landing ── */
+/* ── Invitation hero ── */
 
-.envelope-stage {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 1.25rem 2.5rem;
+@mixin font-hero-sans {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
-.envelope-stage--enter {
-  animation: invitation-fade-in 0.6s ease;
-}
-
-.envelope-hint {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 2rem !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.42em !important;
-  text-transform: uppercase !important;
-  color: #2e2e2e !important;
-  margin-bottom: 1.75rem !important;
-}
-
-.envelope-card-wrap {
-  position: relative;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  display: inline-block;
-  width: min(98vw, 1000px);
-  max-width: 100%;
-
-  &:focus-visible {
-    outline: 2px solid rgba(46, 46, 46, 0.5);
-    outline-offset: 4px;
-  }
-}
-
-.envelope-card {
-  position: relative;
-  display: block;
-  width: 100%;
-  line-height: 0;
-  background: transparent;
-}
-
-.envelope-card-texture {
-  display: block;
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-}
-
-.envelope-card-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2.5rem 1.75rem 2rem;
-  line-height: normal;
-}
-
-.envelope-monogram {
-  position: absolute;
-  top: 17%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  font-family: 'Great Vibes', cursive !important;
-  font-size: clamp(2.75rem, 9vw, 4.75rem) !important;
-  font-weight: 400 !important;
-  line-height: 1 !important;
-  letter-spacing: 0.04em;
-  color: #ebebeb !important;
-  text-shadow: 0 0 14px rgba(255, 255, 255, 0.3),
-    0 1px 0 rgba(255, 255, 255, 0.9), 0 2px 6px rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-  user-select: none;
-  margin: 0 !important;
-}
-
-.envelope-monogram--open {
-  top: 70%;
-  font-size: clamp(2.5rem, 8vw, 4.25rem) !important;
-}
-
-.envelope-stamp-area {
-  position: absolute;
-  top: 14%;
-  right: 10%;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.envelope-postmark {
-  width: 8.5rem;
-  height: 8.5rem;
-  flex-shrink: 0;
-  color: #fff;
-  transform: rotate(-14deg);
-}
-
-.envelope-postmark-text {
-  fill: #fff;
-  font-family: 'Playfair Display', serif;
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  word-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-.envelope-postmark-ring--outer {
-  stroke: #fff;
-  stroke-width: 3px;
-}
-
-.envelope-postmark-ring--inner {
-  stroke: #fff;
-  stroke-width: 0.6;
-}
-
-.envelope-stamp {
-  width: 14rem;
-  flex-shrink: 0;
-}
-
-.envelope-stamp-photo {
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-
-.envelope-names {
-  font-family: 'Great Vibes', cursive !important;
-  font-size: 3.5rem !important;
-  font-weight: 500 !important;
-  color: #fff !important;
-  line-height: 1.2 !important;
-  margin: 0 0 0.5rem !important;
-}
-
-.envelope-subtitle {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1.6rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.18em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.92) !important;
-  line-height: 1.35 !important;
-  margin: 0 0 1.25rem !important;
-}
-
-/* ── Opened invitation ── */
-
-.invitation-panel {
+.invitation-hero {
   position: relative;
   z-index: 1;
   min-height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  animation: invitation-fade-in 0.6s ease;
-}
-
-.invitation-envelope {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 3.25rem 1.25rem 0;
-  flex-shrink: 0;
-  overflow: visible;
-}
-
-.invitation-envelope-stack {
-  position: relative;
-  width: min(98vw, 1000px);
-  line-height: 0;
-  overflow: visible;
-}
-
-.invitation-envelope-back,
-.invitation-envelope-front {
-  user-select: none;
-  -webkit-user-select: none;
-  pointer-events: none;
-}
-
-.invitation-envelope-back {
-  display: block;
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 1;
-}
-
-.invitation-envelope-stack .envelope-monogram {
-  z-index: 4;
-  user-select: none;
-  -webkit-user-select: none;
-  pointer-events: none;
-}
-
-.invite-paper-wrap {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  bottom: 20%;
-  transform: translateX(-50%);
-  width: 72%;
-  pointer-events: none;
   overflow: hidden;
+  animation: invitation-fade-in 0.6s ease;
+}
+
+.invitation-hero-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  animation: invite-paper-reveal 1s ease-out 0.45s both;
-}
-
-.invite-paper-content {
-  position: relative;
-  width: 100%;
-  flex-shrink: 0;
-  transform-origin: bottom center;
-  animation: invite-paper-rise 1s ease-out 0.45s both;
-}
-
-.invite-paper-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  user-select: none;
-  -webkit-user-select: none;
-  pointer-events: none;
-}
-
-.invite-paper-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16% 8% 28%;
-  text-align: center;
-  color: #2e2e2e;
-  pointer-events: auto;
-  user-select: text;
-  -webkit-user-select: text;
-}
-
-.invite-paper-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.invite-paper-names {
-  font-family: 'Great Vibes', cursive !important;
-  font-size: 50px !important;
-  font-weight: 400 !important;
-  color: #2e2e2e !important;
-  line-height: 1.2 !important;
-  margin-bottom: 0.85rem !important;
-}
-
-.invite-paper-tagline {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 18px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  line-height: 1.35 !important;
-  max-width: 24rem;
-  color: rgba(46, 46, 46, 0.92) !important;
-  padding-top: 0;
-  margin-top: 0.15rem;
-}
-
-.invite-paper-tagline-line {
-  display: inline;
-}
-
-.invite-paper-date {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  width: 100%;
-  max-width: 20rem;
-  margin: 1.8rem auto 4.25rem;
-  color: #2e2e2e;
-}
-
-.invite-paper-weekday {
-  grid-column: 1;
-  justify-self: end;
-  padding-right: 0.45rem;
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1rem !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.38em !important;
-  text-transform: uppercase !important;
-  line-height: 1.4 !important;
-  text-align: right;
-  white-space: nowrap;
-}
-
-.invite-paper-time {
-  grid-column: 3;
-  justify-self: start;
-  display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.2em;
-  padding-left: 0.45rem;
+  min-height: 100vh;
+  padding: clamp(4.5rem, 16vh, 7.5rem) 1.5rem
+    calc(clamp(4rem, 10vh, 6rem) + 2.5rem);
+  text-align: center;
+}
+
+.invitation-hero-name {
+  @include font-champagne-cyrillic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+
+.invitation-hero-name--first {
+  text-align: left;
+  font-size: 8rem;
+  color: #fff;
+}
+
+.invitation-hero-name--second {
+  padding-left: 3rem;
+  font-size: 8rem;
+  color: #fff;
+}
+
+.invitation-hero-and {
+  @include font-great-vibes;
+  position: relative;
+  left: 24px;
+  padding-right: 200px;
+  font-size: 5rem;
+  color: #e8d5b5;
+}
+
+.invitation-hero-invite {
+  @include font-hero-sans;
+  font-size: clamp(0.55rem, 1.55vw, 0.7rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.34em !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  line-height: 1.5 !important;
+  margin: 0 0 1.35rem !important;
+  max-width: 22rem;
+}
+
+.invitation-hero-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 2.5vw, 1.25rem);
+}
+
+.invitation-hero-date {
+  @include font-hero-sans;
+  font-size: clamp(0.55rem, 1.55vw, 0.7rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  line-height: 1.4 !important;
   white-space: nowrap;
 }
 
-.invite-paper-time-prefix {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1rem !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.38em !important;
-  text-transform: uppercase !important;
-  line-height: 1.4 !important;
+.invitation-hero-divider {
+  flex-shrink: 0;
+  width: 1px;
+  height: clamp(2rem, 5vw, 2.75rem);
+  background: rgba(255, 255, 255, 0.85);
 }
 
-.invite-paper-time-value {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1rem !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.04em !important;
-  line-height: 1.4 !important;
-}
-
-.invite-paper-center {
-  grid-column: 2;
-  position: relative;
+.invitation-hero-location {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  span {
+    @include font-hero-sans;
+    font-size: clamp(0.55rem, 1.55vw, 0.7rem) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.28em !important;
+    text-transform: uppercase !important;
+    color: #fff !important;
+    line-height: 1.45 !important;
+  }
+}
+
+.invitation-hero-rsvp {
+  position: absolute;
+  right: clamp(1.25rem, 4vw, 2.5rem);
+  bottom: calc(clamp(4rem, 10vh, 6rem) + 1.25rem);
+  z-index: 2;
+  padding: 0.6rem 1.6rem;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  @include font-hero-sans;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+}
+
+.invitation-hero-sand-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(4rem, 10vh, 6rem);
+  background: #bfa993;
+  z-index: 1;
+}
+
+/* ── Love story ── */
+
+.love-story {
+  position: relative;
+  z-index: 1;
+  display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  width: 100%;
+  background: #bfa993;
+  min-height: clamp(72vh, 78vh, 82vh);
+  padding: clamp(2rem, 4vh, 3rem) clamp(1.75rem, 4.5vw, 4rem)
+    clamp(5rem, 11vh, 8rem);
+}
+
+.love-story__inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(3.5rem, 9vw, 11rem);
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.love-story__frame-col {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+}
+
+.love-story__frame {
+  --frame-border-width: 3px;
+  --frame-outer-border-width: calc(2 * var(--frame-border-width));
+  --frame-gap: clamp(8px, 11px, 13px);
+  --frame-border-gap: clamp(0.35rem, 0.75vw, 0.5rem);
+
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
   flex-shrink: 0;
-  width: 3.5rem;
-  min-width: 3.5rem;
-  padding: 0 0.35rem;
-  box-sizing: content-box;
+  background: #bfa993;
 
   &::before,
   &::after {
     content: '';
     position: absolute;
-    top: 50%;
-    width: 0;
-    height: clamp(2.75rem, 8vw, 4rem);
-    border-left: 1px solid #2e2e2e;
-    transform: translateY(-50%);
     pointer-events: none;
   }
 
   &::before {
-    left: 0;
+    inset: 0;
+    border: var(--frame-outer-border-width) solid #fff;
   }
 
   &::after {
-    right: 0;
+    inset: calc(var(--frame-outer-border-width) + var(--frame-border-gap));
+    border: var(--frame-border-width) solid #fff;
   }
 }
 
-.invite-paper-month,
-.invite-paper-year {
-  font-family: 'Playfair Display', serif !important;
-
-  font-weight: 400 !important;
-  letter-spacing: 0.32em !important;
-  text-transform: uppercase !important;
-  line-height: 1.2 !important;
+.love-story__frame-inner {
+  position: relative;
+  z-index: 1;
+  box-sizing: content-box;
+  width: clamp(17rem, 21vw, 26rem);
+  height: clamp(34rem, 62vh, 46rem);
+  margin: calc(
+    var(--frame-outer-border-width) + var(--frame-border-gap) +
+      var(--frame-border-width) + var(--frame-gap)
+  );
+  padding: var(--frame-gap);
+  background: transparent;
+  overflow: hidden;
 }
 
-.invite-paper-day {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 3.5rem !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.04em !important;
-  line-height: 1 !important;
-  margin: 0.2em 0 !important;
-}
-
-@keyframes invite-paper-reveal {
-  from {
-    clip-path: inset(0 0 90% 0);
-  }
-
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes invite-paper-rise {
-  from {
-    transform: translateY(100rem);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-.invitation-envelope-front {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.love-story__frame-photo {
+  display: block;
   width: 100%;
-  height: auto;
-  z-index: 3;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
-.invitation-body {
-  flex: 1;
+.love-story__content {
   display: flex;
+  flex: 0 1 auto;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+  max-width: min(32rem, 42vw);
+}
+
+.love-story__heading {
+  position: relative;
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.love-story__heading-script {
+  @include font-champagne-cyrillic;
+  display: block;
+  font-size: clamp(3rem, 8vw, 5.5rem) !important;
+  font-weight: 400 !important;
+  line-height: 0.95 !important;
+  color: #fff !important;
+  position: relative;
+  z-index: 2;
+  margin: 0 !important;
+}
+
+.love-story__heading-serif {
+  @include font-playfair;
+  display: block;
+  font-size: clamp(2.75rem, 7.5vw, 4.75rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #6a5c4d !important;
+  line-height: 0.85 !important;
+  margin: -0.2em 0 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.love-story__body {
+  @include font-playfair;
+  font-size: clamp(0.7rem, 1.8vw, 0.85rem) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  color: #fff !important;
+  margin: 0 auto !important;
+  max-width: min(32rem, 100%);
+
+  p {
+    margin: 0;
+
+    & + p {
+      margin-top: 1.25em;
+    }
+  }
+}
+
+/* ── Timeline ── */
+
+.timeline {
+  position: relative;
+  z-index: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 40vh;
-  padding: 1rem 1.25rem 1.25rem;
+  min-height: clamp(70vh, 85vh, 90vh);
+  background-color: #3a9595;
+  background-image: url('/images/timeline-bg.png');
+  background-repeat: no-repeat;
+  background-position: center 6%;
+  background-size: 100% auto;
+  padding: clamp(3rem, 8vh, 5rem) clamp(1.5rem, 4vw, 3rem);
 }
 
-.invitation-white-space {
-  flex-shrink: 0;
+.timeline__inner {
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.timeline__heading {
+  @include font-great-vibes;
+  font-size: clamp(3.5rem, 9vw, 6rem) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-align: center;
+  margin: 0 0 clamp(2.5rem, 6vw, 4rem) !important;
+}
+
+.timeline__grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.timeline__item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 2.5rem;
+  align-items: center;
+  text-align: center;
+  width: clamp(11rem, 17vw, 15rem);
+}
+
+.timeline__image-wrap {
   width: 100%;
-  min-height: 30vh;
-  padding: 2rem 0 0;
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.timeline__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  filter: grayscale(100%);
+}
+
+.timeline__image--christian-ceremony {
+  object-position: center calc(42% + 19px);
+}
+
+.timeline__label {
+  @include font-hero-sans;
+  font-size: clamp(0.7rem, 1.6vw, 0.85rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  line-height: 1.4 !important;
+  margin: 0 0 0.65rem !important;
+}
+
+.timeline__detail {
+  @include font-playfair;
+  font-size: clamp(0.72rem, 1.5vw, 0.88rem) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.55 !important;
+  color: #fff !important;
+  margin: 0 !important;
+  max-width: 16rem;
+}
+
+/* ── RSVP ── */
+
+.rsvp {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   background: #fff;
+  min-height: clamp(40vh, 50vh, 60vh);
 }
 
 .invitation-section {
@@ -820,6 +763,17 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .timeline__grid {
+    grid-template-columns: repeat(2, auto);
+    gap: clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  .timeline__item {
+    width: clamp(12rem, 38vw, 16rem);
+  }
+}
+
 @media (max-width: 768px) {
   .site-header {
     display: flex;
@@ -834,7 +788,7 @@
   }
 
   .site-header--invitation {
-    background: #9c9d9e;
+    background: transparent;
   }
 
   .site-header--rsvp {
@@ -870,173 +824,70 @@
     padding: 0.35rem !important;
   }
 
-  .envelope-stage {
+  .invitation-hero-content {
+    padding-top: calc(5rem + env(safe-area-inset-top, 0px));
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .invitation-hero-rsvp {
+    right: 1rem;
+    bottom: calc(clamp(4rem, 10vh, 6rem) + 0.85rem);
+    padding: 0.5rem 1.25rem;
+    font-size: 0.65rem;
+  }
+
+  .invitation-hero-details {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .love-story {
+    min-height: auto;
+    padding: clamp(1.5rem, 5vw, 2.25rem) 1rem clamp(3rem, 8vw, 4.5rem);
+  }
+
+  .love-story__inner {
+    flex-direction: column;
+    width: 100%;
+    gap: clamp(1.25rem, 4vw, 1.75rem);
+  }
+
+  .love-story__content {
+    width: 100%;
+    max-width: min(32rem, 100%);
+    padding-right: 0;
+  }
+
+  .love-story__frame-col {
     justify-content: center;
-    padding: 3.5rem 0.75rem 2rem;
-    min-height: 100vh;
-    min-height: 100dvh;
   }
 
-  .envelope-hint {
-    font-size: clamp(0.875rem, 3.5vw, 1.125rem) !important;
-    letter-spacing: 0.28em !important;
-    margin-bottom: 1.25rem !important;
-    width: 100%;
-    max-width: 18rem;
-    text-align: center;
+  .love-story__frame {
+    --frame-gap: clamp(6px, 7px, 10px);
+    --frame-border-gap: clamp(0.25rem, 1.5vw, 0.4rem);
   }
 
-  .envelope-card-wrap {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
+  .love-story__frame-inner {
+    width: clamp(14rem, 78vw, 20rem);
+    height: auto;
+    min-height: clamp(18rem, 52vw, 24rem);
+  }
+
+  .timeline {
+    min-height: clamp(60vh, 75vh, 80vh);
+    padding: clamp(2.5rem, 6vw, 3.5rem) 1rem;
+  }
+
+  .timeline__grid {
+    grid-template-columns: 1fr;
     justify-content: center;
+    justify-items: center;
+    gap: clamp(2rem, 6vw, 2.75rem);
   }
 
-  .envelope-card {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .envelope-card-texture {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .envelope-card-content {
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1.25rem 1.75rem;
-  }
-
-  .envelope-stamp-area {
-    top: 14%;
-    right: 10%;
-    left: auto;
-    flex-direction: row;
-    align-items: center;
-    gap: clamp(0.25rem, 1.2vw, 0.5rem);
-    transform: none;
-  }
-
-  .envelope-postmark {
-    width: clamp(3.5rem, 15vw, 5.5rem);
-    height: clamp(3.5rem, 15vw, 5.5rem);
-    transform: rotate(-14deg);
-  }
-
-  .envelope-stamp {
-    width: clamp(5rem, 24vw, 8.5rem);
-  }
-
-  .envelope-names {
-    font-size: clamp(1.5rem, 7vw, 2.25rem) !important;
-    margin-bottom: 0.35rem !important;
-    padding: 0 0.5rem;
-    max-width: none;
-  }
-
-  .envelope-subtitle {
-    font-size: clamp(0.85rem, 4vw, 1.25rem) !important;
-    letter-spacing: 0.1em !important;
-    margin-bottom: 0 !important;
-    max-width: none;
-  }
-
-  .envelope-names,
-  .envelope-subtitle {
-    position: relative;
-    z-index: 1;
-  }
-
-  .invitation-envelope {
-    padding: 4.75rem 0.75rem 0;
-  }
-
-  .invitation-envelope-stack {
-    width: 100%;
-  }
-
-  .invite-paper-wrap {
-    width: 76%;
-    bottom: 18%;
-  }
-
-  .invite-paper-overlay {
-    padding: 14% 11% 26%;
-  }
-
-  .invite-paper-copy {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 2%;
-    box-sizing: border-box;
-  }
-
-  .invite-paper-names {
-    font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
-    margin-bottom: 0.4rem !important;
-  }
-
-  .invite-paper-tagline {
-    font-size: clamp(0.7rem, 3vw, 0.9rem) !important;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 0.25rem !important;
-    margin-top: -0.15rem !important;
-    line-height: 1.15 !important;
-    margin-bottom: 0 !important;
-    letter-spacing: 0.08em !important;
-    box-sizing: border-box;
-  }
-
-  .invite-paper-tagline-line {
-    display: block;
-  }
-
-  .invite-paper-date {
-    max-width: 92%;
-    margin: 0.65rem auto 3rem;
-  }
-
-  .invite-paper-month,
-  .invite-paper-year {
-    font-size: 0.65rem !important;
-    letter-spacing: 0.22em !important;
-  }
-
-  .invite-paper-weekday,
-  .invite-paper-time-prefix,
-  .invite-paper-time-value {
-    font-size: 0.7rem !important;
-    letter-spacing: 0.18em !important;
-  }
-
-  .invite-paper-weekday {
-    padding-right: 0.25rem;
-  }
-
-  .invite-paper-time {
-    padding-left: 0.25rem;
-  }
-
-  .invite-paper-day {
-    font-size: 2rem !important;
-  }
-
-  .invite-paper-center {
-    width: 2.75rem;
-    min-width: 2.75rem;
-
-    &::before,
-    &::after {
-      height: clamp(2rem, 9vw, 2.75rem);
-    }
-  }
-
-  .invitation-white-space {
-    gap: 2rem;
-    padding-top: 1.5rem;
+  .timeline__item {
+    width: clamp(16.8rem, 86vw, 21.6rem);
   }
 
   .invitation-section {
@@ -1071,105 +922,23 @@
 }
 
 @media (max-width: 480px) {
-  .envelope-stage {
-    padding: 3rem 0.75rem 2rem;
+  .invitation-hero-name {
+    font-size: clamp(2.35rem, 14vw, 3.25rem) !important;
   }
 
-  .envelope-hint {
+  .invitation-hero-and {
+    left: 12px;
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+  }
+
+  .invitation-hero-invite,
+  .invitation-hero-date,
+  .invitation-hero-location span {
     letter-spacing: 0.22em !important;
-    margin-bottom: 1rem !important;
-  }
-
-  .envelope-card-content {
-    padding: 1.75rem 1rem 1.5rem;
-  }
-
-  .envelope-stamp-area {
-    top: 14%;
-    right: 8%;
-    gap: 0.25rem;
-    transform: translateX(-12px);
-  }
-
-  .envelope-postmark {
-    width: clamp(3rem, 13vw, 4.25rem);
-    height: clamp(3rem, 13vw, 4.25rem);
-  }
-
-  .envelope-stamp {
-    width: clamp(4.25rem, 20vw, 6.5rem);
-  }
-
-  .envelope-names {
-    font-size: clamp(1.25rem, 6vw, 1.85rem) !important;
-  }
-
-  .envelope-subtitle {
-    font-size: clamp(0.75rem, 3.5vw, 1rem) !important;
-    letter-spacing: 0.06em !important;
-  }
-
-  .invitation-envelope {
-    padding-top: 5.25rem;
-  }
-
-  .invite-paper-overlay {
-    padding: 13% 13% 24%;
-  }
-
-  .invite-paper-copy {
-    padding: 0 3%;
-  }
-
-  .invite-paper-names {
-    font-size: clamp(1.35rem, 7vw, 1.75rem) !important;
-    margin-bottom: 0.35rem !important;
-  }
-
-  .invite-paper-tagline {
-    font-size: clamp(0.65rem, 2.8vw, 0.85rem) !important;
-    margin-top: -0.2rem !important;
-    letter-spacing: 0.05em !important;
-  }
-
-  .invite-paper-date {
-    max-width: 88%;
-    margin: 0.5rem auto 2.5rem;
-  }
-
-  .invite-paper-month,
-  .invite-paper-year {
-    font-size: 0.55rem !important;
-    letter-spacing: 0.16em !important;
-  }
-
-  .invite-paper-weekday,
-  .invite-paper-time-prefix,
-  .invite-paper-time-value {
-    font-size: 0.55rem !important;
-    letter-spacing: 0.1em !important;
-  }
-
-  .invite-paper-day {
-    font-size: 1.6rem !important;
-  }
-
-  .invite-paper-center {
-    width: 2.25rem;
-    min-width: 2.25rem;
-
-    &::before,
-    &::after {
-      height: clamp(1.75rem, 8vw, 2.25rem);
-    }
   }
 
   .invitation-section-heading {
     letter-spacing: 0.1em !important;
-  }
-
-  .invitation-white-space {
-    gap: 1.75rem;
   }
 
   .rsvp-message {

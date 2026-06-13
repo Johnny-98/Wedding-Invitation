@@ -11,3 +11,11 @@ export function formatCountdownDate(t: TFunction) {
     'invitePaper.month',
   )} ${WEDDING_YEAR} · ${WEDDING_TIME}`;
 }
+
+export function formatHeroDate(t: TFunction) {
+  return `${t('hero.month')} ${WEDDING_DAY}, ${WEDDING_YEAR}`.toUpperCase();
+}
+
+export function formatTimelineDate() {
+  return WEDDING_DATE.format('DD.MM.YY');
+}

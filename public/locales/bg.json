@@ -1,5 +1,15 @@
 {
   "coupleNames": "Ирен & Петър",
+  "hero": {
+    "partner1Name": "Ирен",
+    "partner2Name": "Петър",
+    "and": "и",
+    "inviteLine": "Имаме удоволствието да ви поканим на сватбата им на",
+    "month": "Септември",
+    "locationLine1": "Kaia Cove",
+    "locationLine2": "Resort, Maui",
+    "rsvp": "RSVP"
+  },
   "taglineLine1": "Имаме удоволствието да ви поканим",
   "taglineLine2": "на нашата сватба",
   "venue": "",
@@ -24,6 +34,35 @@
   "program": {
     "heading": "Програма",
     "comingSoon": "Очаквайте скоро"
+  },
+  "loveStory": {
+    "photoAlt": "Ирен и Петър",
+    "paragraph1": "Имало едно време две сърца, като се намерили сред милиони други, а съдбата отредила да бъдат заедно завинаги.",
+    "paragraph2": "Скъпи роднини и приятели с огромна радост ви каним да станете част на сподели с нас деня, в който ще отпразнуваме любовта си и началото на нашето семейство!",
+    "signOff": "С любов",
+    "signature": "Ирен и Петър"
+  },
+  "timeline": {
+    "heading": "Сватбата",
+    "date": {
+      "label": "Дата",
+      "imageAlt": "Ирен и Петър"
+    },
+    "christianCeremony": {
+      "label": "Църковна церемония",
+      "detail": "Очаквайте скоро",
+      "imageAlt": "Храм „Св. Пимен Зографски“"
+    },
+    "ceremony": {
+      "label": "Церемония",
+      "detail": "16:30 ч. на Oceanview Lawn, Kaia Cove Resort",
+      "imageAlt": "Сватбена церемония на плажа"
+    },
+    "reception": {
+      "label": "Прием",
+      "detail": "18:30 ч. в The Hana Pavilion в комплекса Kaia Cove Resort",
+      "imageAlt": "Зала за сватбен прием"
+    }
   },
   "location": {
     "heading": "Локация",

@@ -1,5 +1,15 @@
 {
   "coupleNames": "Iren & Peter",
+  "hero": {
+    "partner1Name": "Iren",
+    "partner2Name": "Peter",
+    "and": "and",
+    "inviteLine": "Invite you to their wedding on",
+    "month": "September",
+    "locationLine1": "Kaia Cove",
+    "locationLine2": "Resort, Maui",
+    "rsvp": "RSVP"
+  },
   "taglineLine1": "Invite you to share in",
   "taglineLine2": "their wedding celebration",
   "venue": "",
@@ -24,6 +34,35 @@
   "program": {
     "heading": "Program",
     "comingSoon": "Coming soon"
+  },
+  "loveStory": {
+    "photoAlt": "Iren and Peter",
+    "paragraph1": "Once upon a time, two hearts found each other among millions of others, and fate decreed that they would be together forever.",
+    "paragraph2": "Dear family and friends, with great joy we invite you to join us and share the day when we celebrate our love and the beginning of our family!",
+    "signOff": "With love",
+    "signature": "Iren and Peter"
+  },
+  "timeline": {
+    "heading": "The Wedding",
+    "date": {
+      "label": "Date",
+      "imageAlt": "Iren and Peter"
+    },
+    "christianCeremony": {
+      "label": "Christian Ceremony",
+      "detail": "Details to follow",
+      "imageAlt": "St. Pimen Zografski Church"
+    },
+    "ceremony": {
+      "label": "Ceremony",
+      "detail": "4:30 PM at Oceanview Lawn, Kaia Cove Resort",
+      "imageAlt": "Beach wedding ceremony arch"
+    },
+    "reception": {
+      "label": "Reception",
+      "detail": "6:30 PM at The Hana Pavilion on the grounds of Kaia Cove Resort",
+      "imageAlt": "Indoor wedding reception hall"
+    }
   },
   "location": {
     "heading": "Location",

@@ -1,69 +1,51 @@
 import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-import { WeddingCountdown } from '@/components/WeddingCountdown';
-import { EnvelopeMonogram } from '@/components/EnvelopeMonogram';
-import { InvitePaper } from '@/components/InvitePaper';
-import { KindlyRespond } from '@/components/KindlyRespond';
-import { Location } from '@/components/Location';
-import { Program } from '@/components/Program';
+import { formatHeroDate } from '@/constants/weddingDate';
 
 export function WeddingInvitation() {
   const { t } = useTranslation();
-  const venue = t('venue');
-  const address = t('address');
-  const footer = t('footer');
-  const hasDetails = Boolean(venue || address || footer);
 
   return (
-    <Box className="invitation-panel">
-      <Box className="invitation-envelope">
-        <Box className="invitation-envelope-stack">
-          <img
-            className="invitation-envelope-back"
-            src="/images/open-envelope.png"
-            alt=""
-          />
-          <EnvelopeMonogram className="envelope-monogram--open" />
-          <InvitePaper />
-          <img
-            className="invitation-envelope-front"
-            src="/images/open-envelope-front.png"
-            alt=""
-          />
-        </Box>
-      </Box>
+    <Box className="invitation-hero">
+      <Box className="invitation-hero-content">
+        <Typography className="" component="h1">
+          <span className="invitation-hero-name invitation-hero-name--first">
+            {t('hero.partner1Name')}
+          </span>
+          <span className="invitation-hero-name invitation-hero-and">&</span>
+          <br />
+          <span className="invitation-hero-name invitation-hero-name--second">
+            {t('hero.partner2Name')}
+          </span>
+        </Typography>
 
-      {hasDetails && (
-        <Box className="invitation-body">
-          <Box className="invitation-content">
-            {venue && (
-              <Typography className="invitation-venue" component="p">
-                {venue}
-              </Typography>
-            )}
+        <Typography className="invitation-hero-invite" component="p">
+          {t('hero.inviteLine')}
+        </Typography>
 
-            {address && (
-              <Typography className="invitation-address" component="p">
-                {address}
-              </Typography>
-            )}
-
-            {footer && (
-              <Typography className="invitation-footer" component="p">
-                {footer}
-              </Typography>
-            )}
+        <Box className="invitation-hero-details">
+          <Typography className="invitation-hero-date" component="span">
+            {formatHeroDate(t)}
+          </Typography>
+          <Box className="invitation-hero-divider" aria-hidden="true" />
+          <Box className="invitation-hero-location">
+            <Typography component="span">{t('hero.locationLine1')}</Typography>
+            <Typography component="span">{t('hero.locationLine2')}</Typography>
           </Box>
         </Box>
-      )}
-
-      <Box className="invitation-white-space">
-        <Program />
-        <Location />
-        <KindlyRespond />
-        <WeddingCountdown />
       </Box>
+
+      <Link
+        className="invitation-hero-rsvp"
+        to="/rsvp"
+        aria-label={t('rsvp.openForm')}
+      >
+        {t('hero.rsvp')}
+      </Link>
+
+      <Box className="invitation-hero-sand-bar" aria-hidden="true" />
     </Box>
   );
 }

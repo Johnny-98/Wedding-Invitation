@@ -3,12 +3,11 @@ import type { ReactNode } from 'react';
 
 interface WeddingLayoutProps {
   children: ReactNode;
-  open?: boolean;
 }
 
-export function WeddingLayout({ children, open = false }: WeddingLayoutProps) {
+export function WeddingLayout({ children }: WeddingLayoutProps) {
   return (
-    <Box className={`wedding-page${open ? ' wedding-page--open' : ''}`}>
+    <Box>
       <Box className="wedding-bg" aria-hidden />
       {children}
     </Box>
