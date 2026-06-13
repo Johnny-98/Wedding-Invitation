@@ -1,39 +1,16 @@
 {
-  "coupleNames": "Iren & Peter",
   "hero": {
     "partner1Name": "Iren",
     "partner2Name": "Peter",
-    "and": "and",
     "inviteLine": "Invite you to their wedding on",
     "month": "September",
     "locationLine1": "Kaia Cove",
     "locationLine2": "Resort, Maui",
     "rsvp": "RSVP"
   },
-  "taglineLine1": "Invite you to share in",
-  "taglineLine2": "their wedding celebration",
-  "venue": "",
-  "address": "",
-  "footer": "",
-  "envelope": {
-    "clickToOpen": "Click to open",
-    "openLabel": "Open wedding invitation",
-    "gettingMarried": "are getting married",
-    "monogram": "I&P",
-    "saveTheDate": "Save the Date"
-  },
   "invitation": {
     "back": "Back",
-    "backLabel": "Back to envelope"
-  },
-  "invitePaper": {
-    "weekday": "Friday",
-    "month": "Sept",
-    "timePrefix": "At"
-  },
-  "program": {
-    "heading": "Program",
-    "comingSoon": "Coming soon"
+    "backLabel": "Back to invitation"
   },
   "loveStory": {
     "headingScript": "TheLove",
@@ -66,57 +43,6 @@
       "imageAlt": "Indoor wedding reception hall"
     }
   },
-  "location": {
-    "heading": "Location",
-    "mapTitle": "Wedding venue map",
-    "openInMaps": "Open location in Google Maps"
-  },
-  "rsvp": {
-    "celebrationLine1": "We can't wait",
-    "celebrationLine2": "to celebrate with you!",
-    "clickToRespond": "Click here to respond",
-    "deadline": "Respond by July 30th",
-    "openForm": "Open RSVP form",
-    "backLabel": "Back to invitation",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "attending": "Will you attend?",
-      "attendingYes": "Yes, with pleasure",
-      "attendingNo": "Sorry, can't make it",
-      "guests": "Number of guests",
-      "message": "Message or dietary requirements",
-      "submit": "Send response"
-    }
-  },
-  "rsvpBanner": {
-    "heading": "RSVP",
-    "deadlineScript": "by July 30, 2026",
-    "body": "We can't wait to celebrate our wedding with you! Your presence means the world to us, and we're thrilled to share our special day with you."
-  },
-  "schedule": {
-    "headingSerif": "SCHEDULED",
-    "headingScript": "Events",
-    "listLabel": "Wedding day schedule",
-    "events": {
-      "ceremony": {
-        "time": "4:30 PM",
-        "label": "Wedding Ceremony"
-      },
-      "cocktailHour": {
-        "time": "5:30 PM",
-        "label": "Cocktail Hour"
-      },
-      "reception": {
-        "time": "6:30 PM",
-        "label": "Reception"
-      },
-      "afterparty": {
-        "time": "9:00 PM",
-        "label": "Afterparty"
-      }
-    }
-  },
   "otherDetails": {
     "heading": "Other Details",
     "travel": {
@@ -139,14 +65,14 @@
     "registryButton": "VIEW OUR REGISTRY",
     "registryAriaLabel": "View our gift registry"
   },
-  "countdown": {
-    "headingBefore": "Counting down to our wedding",
-    "headingAfter": "Time since our wedding",
-    "day_one": "Day",
-    "day_other": "Days",
-    "hours": "Hours",
-    "minutes": "Minutes",
-    "seconds": "Seconds"
+  "rsvp": {
+    "openForm": "Open RSVP form",
+    "backLabel": "Back to invitation"
+  },
+  "rsvpBanner": {
+    "heading": "RSVP",
+    "deadlineScript": "by July 30, 2026",
+    "body": "We can't wait to celebrate our wedding with you! Your presence means the world to us, and we're thrilled to share our special day with you."
   },
   "language": {
     "switchToEnglish": "English",

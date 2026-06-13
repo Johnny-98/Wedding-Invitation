@@ -21,39 +21,116 @@
   font-family: 'Great Vibes', cursive !important;
 }
 
-@mixin invitation-section {
-  width: 100%;
-  max-width: 36rem;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  text-align: center;
+@mixin font-hero-sans {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
-@mixin invitation-section-heading {
+@mixin site-text-button($color: #2e2e2e) {
+  color: $color !important;
   @include font-playfair;
-  font-size: clamp(1.25rem, 4vw, 1.875rem) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.14em !important;
+  font-size: 0.85rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.28em !important;
   text-transform: uppercase !important;
-  color: #2e2e2e !important;
-  line-height: 1.35 !important;
-  margin-bottom: 0.75rem !important;
-  display: block;
+  padding: 0.45rem 0.85rem !important;
+  min-width: unset !important;
+  opacity: 0.85;
+
+  &:hover {
+    background: transparent !important;
+    opacity: 1;
+  }
 }
 
-@mixin bordered-panel {
-  border-radius: 0.35rem;
-  border: 1px solid rgba(46, 46, 46, 0.12);
-}
-
-@mixin interactive-panel {
-  @include bordered-panel;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+@mixin wedding-outline-link {
+  padding: 0.6rem 1.6rem;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  @include font-hero-sans;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
 
   &:hover,
   &:focus-visible {
-    border-color: rgba(46, 46, 46, 0.35);
-    box-shadow: 0 4px 20px rgba(46, 46, 46, 0.12);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+}
+
+@mixin playfair-uppercase-label($size) {
+  @include font-playfair;
+  font-size: $size !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  line-height: 1.4 !important;
+}
+
+@mixin playfair-italic-body(
+  $size,
+  $max-width: null,
+  $margin: 0,
+  $line-height: 1.65
+) {
+  @include font-playfair;
+  font-size: $size !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  line-height: $line-height !important;
+  color: #fff !important;
+  margin: $margin !important;
+
+  @if $max-width {
+    max-width: $max-width;
+  }
+}
+
+@mixin override-mui-playfair($font-style: italic, $font-size: inherit) {
+  p,
+  .MuiTypography-root {
+    @include font-playfair;
+    font-size: $font-size !important;
+    font-style: $font-style !important;
+    font-weight: 400 !important;
+    line-height: inherit !important;
+    color: inherit !important;
+  }
+}
+
+@mixin full-bleed-bg-section(
+  $bg-color,
+  $bg-image: null,
+  $min-height: clamp(70vh, 85vh, 90vh),
+  $full-viewport: false
+) {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  background-color: $bg-color;
+  padding: clamp(3rem, 8vh, 5rem) clamp(1.5rem, 4vw, 3rem);
+
+  @if $full-viewport {
+    min-height: 100vh;
+    min-height: 100dvh;
+  } @else {
+    min-height: $min-height;
+  }
+
+  @if $bg-image {
+    background-image: url($bg-image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
 }
 
@@ -101,20 +178,7 @@
 }
 
 .language-switcher-button {
-  color: #2e2e2e !important;
-  font-family: 'Playfair Display', serif !important;
-  font-size: 0.85rem !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.28em !important;
-  text-transform: uppercase !important;
-  padding: 0.45rem 0.85rem !important;
-  min-width: unset !important;
-  opacity: 0.85;
-
-  &:hover {
-    background: transparent !important;
-    opacity: 1;
-  }
+  @include site-text-button;
 }
 
 .background-music-button {
@@ -144,27 +208,10 @@
 }
 
 .invitation-back-button {
-  color: #2e2e2e !important;
-  font-family: 'Playfair Display', serif !important;
-  font-size: 0.85rem !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.28em !important;
-  text-transform: uppercase !important;
-  padding: 0.45rem 0.85rem !important;
-  min-width: unset !important;
-  opacity: 0.85;
-
-  &:hover {
-    background: transparent !important;
-    opacity: 1;
-  }
+  @include site-text-button;
 }
 
 /* ── Invitation hero ── */
-
-@mixin font-hero-sans {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-}
 
 .invitation-hero {
   position: relative;
@@ -273,26 +320,11 @@
 }
 
 .invitation-hero-rsvp {
+  @include wedding-outline-link;
   position: absolute;
   right: clamp(1.25rem, 4vw, 2.5rem);
   bottom: calc(clamp(4rem, 10vh, 6rem) + 1.25rem);
   z-index: 2;
-  padding: 0.6rem 1.6rem;
-  border: 1px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  @include font-hero-sans;
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  transition: background 0.2s ease, color 0.2s ease;
-
-  &:hover,
-  &:focus-visible {
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
-  }
 }
 
 .invitation-hero-sand-bar {
@@ -453,25 +485,9 @@
 }
 
 .love-story__body {
-  @include font-playfair;
+  @include playfair-italic-body(1.1rem, min(32rem, 100%), 0 auto);
   width: 100%;
-  font-size: 1.1rem !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  color: #fff !important;
-  margin: 0 auto !important;
-  max-width: min(32rem, 100%);
-
-  p,
-  .MuiTypography-root {
-    @include font-playfair;
-    font-size: inherit !important;
-    font-style: italic !important;
-    font-weight: 400 !important;
-    line-height: inherit !important;
-    color: inherit !important;
-  }
+  @include override-mui-playfair;
 
   p {
     margin: 0;
@@ -485,20 +501,12 @@
 /* ── Timeline ── */
 
 .timeline {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  background-color: #3a9595;
-  background-image: url('/images/timeline-bg.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding: clamp(3rem, 8vh, 5rem) clamp(1.5rem, 4vw, 3rem);
+  @include full-bleed-bg-section(
+    #3a9595,
+    '/images/timeline-bg.png',
+    null,
+    true
+  );
 }
 
 .timeline__inner {
@@ -552,60 +560,23 @@
   object-position: center top;
 }
 
-.timeline__label {
-  @include font-playfair;
-  font-size: clamp(0.7rem, 1.6vw, 0.85rem) !important;
-  font-weight: 500 !important;
-  font-style: normal !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
-  color: #fff !important;
-  line-height: 1.4 !important;
-  margin: 0 0 0.65rem !important;
-}
-
+.timeline__label,
 .timeline__label.MuiTypography-root {
-  @include font-playfair;
-  font-size: clamp(0.7rem, 1.6vw, 0.85rem) !important;
-  font-weight: 500 !important;
-  font-style: normal !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
-  line-height: 1.4 !important;
-  color: #fff !important;
+  @include playfair-uppercase-label(clamp(0.7rem, 1.6vw, 0.85rem));
+  margin: 0 0 0.65rem !important;
 }
 
 .timeline__detail,
 .timeline__detail.MuiTypography-root {
-  @include font-playfair;
-  font-size: 0.88rem !important;
-  font-weight: 400 !important;
-  font-style: italic !important;
+  @include playfair-italic-body(0.88rem, 256px, 0, 1.55);
   letter-spacing: 0 !important;
   text-transform: none !important;
-  line-height: 1.55 !important;
-  color: #fff !important;
-  margin: 0 !important;
-  max-width: 256px;
 }
 
 /* ── Gifts ── */
 
 .rsvp {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: clamp(70vh, 85vh, 90vh);
-  overflow: hidden;
-  background-color: #b5a99c;
-  background-image: url('/images/faqs-bg.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding: clamp(3rem, 8vh, 5rem) clamp(1.5rem, 4vw, 3rem);
+  @include full-bleed-bg-section(#b5a99c, '/images/faqs-bg.png');
 }
 
 .rsvp__inner {
@@ -638,34 +609,16 @@
 }
 
 .rsvp__body {
-  @include font-playfair;
-  font-size: clamp(0.75rem, 1.5vw, 0.9rem) !important;
-  font-weight: 400 !important;
-  font-style: italic !important;
-  line-height: 1.65 !important;
-  color: #fff !important;
-  margin: 0 auto clamp(1.75rem, 4vw, 2.25rem) !important;
-  max-width: 24rem;
+  @include playfair-italic-body(
+    clamp(0.75rem, 1.5vw, 0.9rem),
+    24rem,
+    0 auto clamp(1.75rem, 4vw, 2.25rem)
+  );
 }
 
 .rsvp__registry-link {
+  @include wedding-outline-link;
   display: inline-block;
-  padding: 0.6rem 1.6rem;
-  border: 1px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  @include font-hero-sans;
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  transition: background 0.2s ease, color 0.2s ease;
-
-  &:hover,
-  &:focus-visible {
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
-  }
 }
 
 /* ── RSVP banner ── */
@@ -820,101 +773,12 @@
 }
 
 .other-details__item-heading {
-  @include font-playfair;
-  font-size: clamp(0.75rem, 1.6vw, 0.9rem) !important;
-  font-weight: 500 !important;
-  font-style: normal !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
-  color: #fff !important;
-  line-height: 1.4 !important;
+  @include playfair-uppercase-label(clamp(0.75rem, 1.6vw, 0.9rem));
   margin: 0 0 clamp(1.35rem, 3vw, 1.85rem) !important;
 }
 
 .other-details__item-body {
-  @include font-playfair;
-  font-size: clamp(0.68rem, 1.45vw, 0.82rem) !important;
-  font-weight: 400 !important;
-  font-style: italic !important;
-  line-height: 1.65 !important;
-  color: #fff !important;
-  margin: 0 !important;
-  max-width: 18rem;
-}
-
-.invitation-section {
-  @include invitation-section;
-}
-
-.invitation-section-heading {
-  @include invitation-section-heading;
-}
-
-.program-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  height: clamp(10rem, 28vw, 14rem);
-  @include bordered-panel;
-  background: rgba(130, 130, 130, 0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.program-coming-soon {
-  @include font-playfair;
-  font-size: clamp(1rem, 3vw, 1.25rem) !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.92) !important;
-  margin: 0 !important;
-}
-
-.location-map-link {
-  display: block;
-  overflow: hidden;
-  @include interactive-panel;
-  cursor: pointer;
-}
-
-.location-map {
-  display: block;
-  width: 100%;
-  height: clamp(10rem, 28vw, 14rem);
-  border: 0;
-  pointer-events: none;
-}
-
-.rsvp-celebration {
-  @include font-great-vibes;
-  font-size: clamp(1.75rem, 5vw, 2.25rem) !important;
-  font-weight: 400 !important;
-  line-height: 1.3 !important;
-  color: #2e2e2e !important;
-  margin: 0 0 1rem !important;
-}
-
-.rsvp-card {
-  display: block;
-  padding: 1.25rem 1rem;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  @include interactive-panel;
-  border-color: rgba(46, 46, 46, 0.2);
-}
-
-.rsvp-message {
-  @include font-playfair;
-  font-size: clamp(0.875rem, 2.5vw, 1rem) !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  color: #2e2e2e !important;
-  line-height: 1.5 !important;
-  margin: 0 !important;
+  @include playfair-italic-body(clamp(0.68rem, 1.45vw, 0.82rem), 18rem);
 }
 
 .rsvp-page {
@@ -943,113 +807,6 @@
 
   to {
     opacity: 1;
-  }
-}
-
-.invitation-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  max-width: 36rem;
-  text-align: center;
-  color: #fff;
-}
-
-.invitation-venue {
-  font-family: 'Great Vibes', cursive !important;
-  font-size: clamp(1.25rem, 3.2vw, 1.625rem) !important;
-  color: #fff !important;
-  margin-bottom: 0.5rem !important;
-}
-
-.invitation-address {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(0.45rem, 1.4vw, 0.5625rem) !important;
-  letter-spacing: 0.28em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-  margin-bottom: 1.25rem !important;
-}
-
-.invitation-footer {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(0.45rem, 1.4vw, 0.5625rem) !important;
-  letter-spacing: 0.3em !important;
-  text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-  margin-bottom: 1.5rem !important;
-}
-
-.wedding-countdown {
-  width: 100%;
-  max-width: 36rem;
-  margin: 0 auto;
-  flex-shrink: 0;
-  padding: 2rem 1.25rem 2.5rem;
-  text-align: center;
-  border-top: 1px solid rgba(46, 46, 46, 0.15);
-
-  .countdown-heading {
-    font-family: 'Playfair Display', serif !important;
-    font-size: clamp(0.45rem, 1.4vw, 0.5625rem) !important;
-    letter-spacing: 0.3em !important;
-    text-transform: uppercase !important;
-    color: rgba(46, 46, 46, 0.75) !important;
-    margin-bottom: 1rem !important;
-    display: block;
-  }
-
-  .countdown-grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.25rem 0.4rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .countdown-unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 3.5rem;
-  }
-
-  .countdown-value {
-    font-family: 'Playfair Display', serif !important;
-    font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
-    font-weight: 400 !important;
-    line-height: 1 !important;
-    color: #2e2e2e !important;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.06em;
-  }
-
-  .countdown-label {
-    font-family: 'Playfair Display', serif !important;
-    font-size: clamp(0.4rem, 1.2vw, 0.5rem) !important;
-    letter-spacing: 0.2em !important;
-    text-transform: uppercase !important;
-    color: rgba(46, 46, 46, 0.65) !important;
-    margin-top: 0.35rem !important;
-  }
-
-  .countdown-separator {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 1.25rem !important;
-    color: rgba(46, 46, 46, 0.35) !important;
-    line-height: 1;
-    padding-bottom: 0.85rem;
-    user-select: none;
-  }
-
-  .countdown-date {
-    font-family: 'Playfair Display', serif !important;
-    font-size: clamp(0.45rem, 1.3vw, 0.5625rem) !important;
-    letter-spacing: 0.2em !important;
-    text-transform: uppercase !important;
-    color: rgba(46, 46, 46, 0.65) !important;
   }
 }
 
@@ -1244,34 +1001,12 @@
     width: clamp(300px, 88vw, 380px);
   }
 
-  .invitation-section {
-    padding: 0 1rem;
-  }
-
-  .program-placeholder,
-  .location-map {
-    height: clamp(8.5rem, 38vw, 11rem);
-  }
-
-  .rsvp-celebration {
-    font-size: clamp(1.5rem, 6vw, 1.85rem) !important;
-    padding: 0 0.5rem;
-  }
-
   .rsvp-page {
     padding: 4.5rem 1rem 2rem;
   }
 
   .rsvp-form-embed {
     height: 1100px;
-  }
-
-  .wedding-countdown {
-    padding: 1.75rem 1rem 2rem;
-  }
-
-  .countdown-value {
-    font-size: clamp(1.1rem, 5vw, 1.5rem) !important;
   }
 }
 
@@ -1289,26 +1024,5 @@
   .invitation-hero-date,
   .invitation-hero-location span {
     letter-spacing: 0.22em !important;
-  }
-
-  .invitation-section-heading {
-    letter-spacing: 0.1em !important;
-  }
-
-  .rsvp-message {
-    font-size: 0.75rem !important;
-    letter-spacing: 0.08em !important;
-  }
-
-  .countdown-separator {
-    display: none;
-  }
-
-  .countdown-grid {
-    gap: 0.5rem 0.75rem;
-  }
-
-  .countdown-unit {
-    min-width: 3rem;
   }
 }

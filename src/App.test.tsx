@@ -14,6 +14,6 @@ describe('App', () => {
     );
 
     expect(screen.getByRole('heading', { name: /Ирен/i })).toBeInTheDocument();
-    expect(screen.getByText('RSVP')).toBeInTheDocument();
+    expect(screen.getAllByText('RSVP').length).toBeGreaterThan(0);
   });
 });

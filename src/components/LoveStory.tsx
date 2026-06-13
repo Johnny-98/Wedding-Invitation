@@ -1,6 +1,13 @@
 import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
+const LOVE_STORY_PARAGRAPHS = [
+  'paragraph1',
+  'paragraph2',
+  'signOff',
+  'signature',
+] as const;
+
 export function LoveStory() {
   const { t, i18n } = useTranslation();
   const isBulgarian = i18n.language.startsWith('bg');
@@ -39,10 +46,11 @@ export function LoveStory() {
           </Box>
 
           <Box className="love-story__body">
-            <Typography component="p">{t('loveStory.paragraph1')}</Typography>
-            <Typography component="p">{t('loveStory.paragraph2')}</Typography>
-            <Typography component="p">{t('loveStory.signOff')}</Typography>
-            <Typography component="p">{t('loveStory.signature')}</Typography>
+            {LOVE_STORY_PARAGRAPHS.map((key) => (
+              <Typography component="p" key={key}>
+                {t(`loveStory.${key}`)}
+              </Typography>
+            ))}
           </Box>
         </Box>
       </Box>

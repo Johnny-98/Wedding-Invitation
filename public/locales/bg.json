@@ -1,39 +1,16 @@
 {
-  "coupleNames": "Ирен & Петър",
   "hero": {
     "partner1Name": "Ирен",
     "partner2Name": "Петър",
-    "and": "и",
     "inviteLine": "Имаме удоволствието да ви поканим на сватбата им на",
     "month": "Септември",
     "locationLine1": "Kaia Cove",
     "locationLine2": "Resort, Maui",
     "rsvp": "RSVP"
   },
-  "taglineLine1": "Имаме удоволствието да ви поканим",
-  "taglineLine2": "на нашата сватба",
-  "venue": "",
-  "address": "",
-  "footer": "",
-  "envelope": {
-    "clickToOpen": "Кликнете за да отговорите",
-    "openLabel": "Отвори сватбената покана",
-    "gettingMarried": "се женят",
-    "monogram": "И&П",
-    "saveTheDate": "Запазете датата"
-  },
   "invitation": {
     "back": "Назад",
-    "backLabel": "Обратно към плика"
-  },
-  "invitePaper": {
-    "weekday": "Петък",
-    "month": "Септ",
-    "timePrefix": "В"
-  },
-  "program": {
-    "heading": "Програма",
-    "comingSoon": "Очаквайте скоро"
+    "backLabel": "Обратно към поканата"
   },
   "loveStory": {
     "headingScript": "Нашата любовна",
@@ -66,57 +43,6 @@
       "imageAlt": "Зала за сватбен прием"
     }
   },
-  "location": {
-    "heading": "Локация",
-    "mapTitle": "Карта на мястото на церемонията",
-    "openInMaps": "Отвори локацията в Google Maps"
-  },
-  "rsvp": {
-    "celebrationLine1": "Нямаме търпение",
-    "celebrationLine2": "да празнуваме с вас!",
-    "clickToRespond": "Кликнете тук, за да отговорите",
-    "deadline": "Молим да потвърдите до 30 юли",
-    "openForm": "Отвори формуляра за отговор",
-    "backLabel": "Обратно към поканата",
-    "form": {
-      "name": "Име",
-      "email": "Имейл",
-      "attending": "Ще присъствате ли?",
-      "attendingYes": "Да, с удоволствие",
-      "attendingNo": "За съжаление, не мога",
-      "guests": "Брой гости",
-      "message": "Съобщение или хранителни изисквания",
-      "submit": "Изпрати отговор"
-    }
-  },
-  "rsvpBanner": {
-    "heading": "RSVP",
-    "deadlineScript": "до 30 юли 2026",
-    "body": "Нямаме търпение да празнуваме сватбата си с вас! Присъствието ви означава много за нас и с нетърпение очакваме да споделим специалния си ден със вас"
-  },
-  "schedule": {
-    "headingSerif": "планирани",
-    "headingScript": "събития",
-    "listLabel": "Програма за сватбения ден",
-    "events": {
-      "ceremony": {
-        "time": "16:30",
-        "label": "Сватбена церемония"
-      },
-      "cocktailHour": {
-        "time": "17:30",
-        "label": "Коктейл"
-      },
-      "reception": {
-        "time": "18:30",
-        "label": "Прием"
-      },
-      "afterparty": {
-        "time": "21:00",
-        "label": "Afterparty"
-      }
-    }
-  },
   "otherDetails": {
     "heading": "Други детайли",
     "travel": {
@@ -139,14 +65,14 @@
     "registryButton": "ВИЖТЕ СПИСЪКА С ПОДАРЪЦИ",
     "registryAriaLabel": "Вижте списъка с подаръци"
   },
-  "countdown": {
-    "headingBefore": "Остава до нашата сватба",
-    "headingAfter": "От нашата сватба мина",
-    "day_one": "Ден",
-    "day_other": "Дни",
-    "hours": "Часа",
-    "minutes": "Минути",
-    "seconds": "Секунди"
+  "rsvp": {
+    "openForm": "Отвори формуляра за отговор",
+    "backLabel": "Обратно към поканата"
+  },
+  "rsvpBanner": {
+    "heading": "RSVP",
+    "deadlineScript": "до 30 юли 2026",
+    "body": "Нямаме търпение да празнуваме сватбата си с вас! Присъствието ви означава много за нас и с нетърпение очакваме да споделим специалния си ден със вас"
   },
   "language": {
     "switchToEnglish": "English",
