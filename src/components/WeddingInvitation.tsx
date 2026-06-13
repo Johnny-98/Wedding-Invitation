@@ -10,12 +10,12 @@ export function WeddingInvitation() {
   return (
     <Box className="invitation-hero">
       <Box className="invitation-hero-content">
-        <Typography className="" component="h1">
+        <Typography className="invitation-hero-names" component="h1">
           <span className="invitation-hero-name invitation-hero-name--first">
             {t('hero.partner1Name')}
           </span>
           <span className="invitation-hero-name invitation-hero-and">&</span>
-          <br />
+          <br className="invitation-hero-names-break" />
           <span className="invitation-hero-name invitation-hero-name--second">
             {t('hero.partner2Name')}
           </span>

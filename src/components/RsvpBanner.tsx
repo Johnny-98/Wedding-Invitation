@@ -17,10 +17,6 @@ export function RsvpBanner() {
           to="/rsvp"
           aria-label={t('rsvp.openForm')}
         >
-          <Box className="rsvp-banner__monogram" aria-hidden="true">
-            {t('envelope.monogram')}
-          </Box>
-
           <Box
             className="rsvp-banner__heading"
             component="h2"

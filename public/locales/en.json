@@ -92,7 +92,7 @@
   "rsvpBanner": {
     "heading": "RSVP",
     "deadlineScript": "by July 30, 2026",
-    "body": "We can't wait to celebrate our wedding with you! Your presence means the world to us, and we're thrilled to share our special day with our cherished family and friends."
+    "body": "We can't wait to celebrate our wedding with you! Your presence means the world to us, and we're thrilled to share our special day with you."
   },
   "schedule": {
     "headingSerif": "SCHEDULED",
@@ -132,22 +132,12 @@
       "body": "Please wear cocktail or semi-formal attire—chic yet comfortable for the celebrations. Kindly avoid wearing white."
     }
   },
-  "faqs": {
-    "heading": "FAQS",
-    "items": {
-      "children": {
-        "question": "Are children allowed?",
-        "answer": "We truly adore your children, but this celebration will be exclusively for adults. We hope you can take the opportunity to enjoy a night out with us!"
-      },
-      "dietary": {
-        "question": "What if I have dietary restrictions?",
-        "answer": "We aim to make sure that all our guests can savor their meals at the reception. Therefore, please let us know if you or anyone in your party has any dietary requirements or food allergies."
-      },
-      "phones": {
-        "question": "May we use our phones during the ceremony?",
-        "answer": "Please keep your phones away during the ceremony, as we have professionals capturing our special day. Afterward, feel free to take photos and videos to help create cherished memories!"
-      }
-    }
+  "gifts": {
+    "heading": "Gifts",
+    "tagline": "YOUR PRESENCE IS THE GREATEST GIFT WE COULD RECEIVE.",
+    "body": "For those who have asked, we've set up a small registry to assist us in starting our next chapter together.",
+    "registryButton": "VIEW OUR REGISTRY",
+    "registryAriaLabel": "View our gift registry"
   },
   "countdown": {
     "headingBefore": "Counting down to our wedding",
