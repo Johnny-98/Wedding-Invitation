@@ -3,7 +3,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import circleDependency from 'vite-plugin-circular-dependency';
-import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -11,7 +10,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
-    svgr(),
     tsconfigPaths(),
     circleDependency({
       exclude: /node_modules/,

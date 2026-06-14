@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 import { formatHeroDate } from '@/constants/weddingDate';
+import { TwoLineText } from '@/components/TwoLineText';
 
 export function IrenAndPeter() {
   const { t } = useTranslation();
@@ -21,18 +22,18 @@ export function IrenAndPeter() {
         </Typography>
 
         <Box className="invitation-hero-message">
-          <Typography className="invitation-hero-invite" component="p">
-            {t('hero.inviteLine1')}
-            <br />
-            {t('hero.inviteLine2')}
-          </Typography>
+          <TwoLineText
+            className="invitation-hero-invite"
+            line1Key="common.inviteLine1"
+            line2Key="common.inviteLine2"
+          />
 
           <Typography className="invitation-hero-date" component="p">
             {formatHeroDate(t)}
           </Typography>
 
           <Typography className="invitation-hero-location" component="p">
-            {t('hero.location')}
+            {t('common.venue')}
           </Typography>
         </Box>
       </Box>

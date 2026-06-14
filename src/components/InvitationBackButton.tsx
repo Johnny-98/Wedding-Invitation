@@ -3,23 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 interface InvitationBackButtonProps {
-  onBack?: () => void;
-  to?: string;
+  to: string;
 }
 
-export function InvitationBackButton({
-  onBack,
-  to,
-}: InvitationBackButtonProps) {
+export function InvitationBackButton({ to }: InvitationBackButtonProps) {
   const { t } = useTranslation();
 
   return (
     <Box className="invitation-back">
       <Button
         className="invitation-back-button"
-        {...(to
-          ? { component: Link, to, 'aria-label': t('rsvp.backLabel') }
-          : { onClick: onBack, 'aria-label': t('invitation.backLabel') })}
+        component={Link}
+        to={to}
+        aria-label={t('common.backLabel')}
       >
         {t('invitation.back')}
       </Button>

@@ -50,7 +50,9 @@ export function OtherDetails() {
                     {t(`otherDetails.${key}.label`)}
                   </Box>
                   <Box className="other-details__item-body" component="p">
-                    {t(`otherDetails.${key}.body`)}
+                    {key === 'location'
+                      ? t('common.venue')
+                      : t(`otherDetails.${key}.body`)}
                   </Box>
                 </Box>
               );

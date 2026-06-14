@@ -5,17 +5,17 @@ export function Gifts() {
   const { t } = useTranslation();
 
   return (
-    <Box className="rsvp" component="section" aria-labelledby="gifts-heading">
-      <Box className="rsvp__inner">
-        <Box className="rsvp__heading" component="h2" id="gifts-heading">
+    <Box className="gifts" component="section" aria-labelledby="gifts-heading">
+      <Box className="gifts__inner">
+        <Box className="gifts__heading" component="h2" id="gifts-heading">
           {t('gifts.heading')}
         </Box>
 
-        <Box className="rsvp__tagline" component="p">
+        <Box className="gifts__tagline" component="p">
           {t('gifts.tagline')}
         </Box>
 
-        <Box className="rsvp__body" component="p">
+        <Box className="gifts__body" component="p">
           {t('gifts.body')}
         </Box>
       </Box>

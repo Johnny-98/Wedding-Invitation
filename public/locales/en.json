@@ -2,24 +2,24 @@
   "hero": {
     "partner1Name": "Iren",
     "partner2Name": "Peter",
-    "inviteLine1": "Dear family and friends,",
-    "inviteLine2": "we have the pleasure of inviting you to our wedding",
     "month": "September",
-    "location": "Wedding Complex \"Amaya Beach\", Kraymorie, Burgas",
     "rsvp": "Click here to confirm"
   },
-  "invitation": {
-    "back": "Back",
+  "common": {
+    "inviteLine1": "Dear family and friends,",
+    "inviteLine2": "we have the pleasure of inviting you to our wedding",
+    "venue": "Wedding Complex \"Amaya Beach\", Kraymorie, Burgas",
     "backLabel": "Back to invitation"
   },
+  "invitation": {
+    "back": "Back"
+  },
   "loveStory": {
-    "headingScript": "TheLove",
+    "headingScript": "Our love",
     "headingSerif": "story",
     "photoAlt": "Iren and Peter",
-    "paragraph1": "Once upon a time, two hearts found each other among millions of others, and fate decreed that they would be together forever.",
-    "paragraph2Line1": "Dear family and friends,",
-    "paragraph2Line2": "we have the pleasure of inviting you to our wedding.",
-    "bestMen": "Best men: Plamena and Peter Apostolov",
+    "paragraph1": "Once upon a time, two hearts that found each other among millions of others, and fate decreed that they would be together forever.",
+    "bestMen": "Maid of Honor and Best Man: Plamena and Peter Apostolovi",
     "signOff": "With love",
     "signature": "Iren and Peter"
   },
@@ -35,14 +35,14 @@
       "imageAlt": "St. Pimen Zografski Church"
     },
     "cocktail": {
-      "label": "Cocktail with Welcome Drink",
+      "label": "Cocktail with Welcome drink",
       "detail": "5:00 PM",
       "imageAlt": "Wedding cocktail"
     },
     "civilCeremony": {
-      "label": "Outdoor Civil Ceremony & Receiving Congratulations",
+      "label": "Outdoor Civil Ceremony and Congratulations",
       "detail": "5:40 PM",
-      "imageAlt": "Outdoor civil ceremony and receiving congratulations"
+      "imageAlt": "Outdoor civil ceremony and congratulations"
     },
     "restaurant": {
       "label": "Restaurant",
@@ -53,8 +53,7 @@
   "otherDetails": {
     "heading": "Other Details",
     "location": {
-      "label": "Location",
-      "body": "Wedding Complex \"Amaya Beach\", Kraymorie, Burgas"
+      "label": "Location"
     },
     "accommodation": {
       "label": "Accommodation",
@@ -62,22 +61,21 @@
     },
     "dressCode": {
       "label": "Dress Code",
-      "body": "Please wear cocktail or semi-formal attire—chic yet comfortable for the celebrations. Kindly avoid wearing white."
+      "body": "Please wear cocktail or formal attire, and please avoid wearing white."
     }
   },
   "gifts": {
     "heading": "Gifts",
-    "tagline": "YOUR PRESENCE IS THE GREATEST GIFT WE COULD RECEIVE.",
-    "body": "For those who have asked, we've set up a small registry to assist us in starting our next chapter together."
+    "tagline": "YOUR PRESENCE IS THE GREATEST GIFT WE CAN RECEIVE.",
+    "body": "But if you want, we would be grateful if you could help us buy a family car."
   },
   "rsvp": {
-    "openForm": "Open RSVP form",
-    "backLabel": "Back to invitation"
+    "openForm": "Open RSVP form"
   },
   "rsvpBanner": {
-    "heading": "RSVP",
+    "heading": "Please confirm",
     "deadlineScript": "by July 15, 2026",
-    "body": "We can't wait to celebrate our wedding with you! Your presence means the world to us, and we look forward to sharing our special day with you!"
+    "body": "Your presence means a lot to us and we look forward to sharing our special day with you!"
   },
   "language": {
     "switchToEnglish": "English",

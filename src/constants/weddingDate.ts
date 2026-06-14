@@ -1,6 +1,6 @@
 import type { TFunction } from 'i18next';
 
-export const WEDDING_TIMEZONE = 'Europe/Sofia';
+const WEDDING_TIMEZONE = 'Europe/Sofia';
 
 /** 18 Sep 2026, 16:00 — church ceremony, Europe/Sofia (EEST, UTC+3). */
 export const WEDDING_COUNTDOWN_TARGET_MS = Date.parse(
@@ -14,8 +14,8 @@ const weddingDayInSofia = new Intl.DateTimeFormat('en-CA', {
   day: '2-digit',
 }).format(new Date(WEDDING_COUNTDOWN_TARGET_MS));
 
-export const WEDDING_YEAR = Number(weddingDayInSofia.slice(0, 4));
-export const WEDDING_DAY = Number(weddingDayInSofia.slice(8, 10));
+const WEDDING_YEAR = Number(weddingDayInSofia.slice(0, 4));
+const WEDDING_DAY = Number(weddingDayInSofia.slice(8, 10));
 
 export function formatHeroDate(t: TFunction) {
   return `${WEDDING_DAY} ${t('hero.month')} ${WEDDING_YEAR}`;

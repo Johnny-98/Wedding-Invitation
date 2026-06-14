@@ -1,9 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
+import { TwoLineText } from '@/components/TwoLineText';
+
 const LOVE_STORY_PARAGRAPHS = [
   'paragraph1',
-  'paragraph2',
+  'invite',
   'bestMen',
   'signOff',
 ] as const;
@@ -15,27 +17,22 @@ function LoveStoryParagraph({
 }) {
   const { t } = useTranslation();
 
-  if (paragraphKey === 'paragraph2' || paragraphKey === 'signOff') {
-    const line1Key =
-      paragraphKey === 'paragraph2'
-        ? 'loveStory.paragraph2Line1'
-        : 'loveStory.signOff';
-    const line2Key =
-      paragraphKey === 'paragraph2'
-        ? 'loveStory.paragraph2Line2'
-        : 'loveStory.signature';
-
+  if (paragraphKey === 'invite') {
     return (
-      <Typography
-        className={
-          paragraphKey === 'paragraph2' ? 'love-story__invite' : undefined
-        }
-        component="p"
-      >
-        {t(line1Key)}
-        <br />
-        {t(line2Key)}
-      </Typography>
+      <TwoLineText
+        line1Key="common.inviteLine1"
+        line2Key="common.inviteLine2"
+        line2Suffix="."
+      />
+    );
+  }
+
+  if (paragraphKey === 'signOff') {
+    return (
+      <TwoLineText
+        line1Key="loveStory.signOff"
+        line2Key="loveStory.signature"
+      />
     );
   }
 
