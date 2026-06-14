@@ -1,15 +1,22 @@
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import LocalHotelIcon from '@mui/icons-material/LocalHotel';
+import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const DETAIL_KEYS = ['location', 'accommodation', 'dressCode'] as const;
+const DETAIL_KEYS = [
+  'location',
+  'accommodation',
+  'dressCode',
+  'noBouquets',
+] as const;
 
 const DETAIL_ICONS = {
   location: LocationOnIcon,
   accommodation: LocalHotelIcon,
   dressCode: CheckroomIcon,
+  noBouquets: LocalFloristIcon,
 } as const;
 
 export function OtherDetails() {

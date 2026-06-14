@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 export function Gifts() {
   const { t } = useTranslation();
@@ -16,7 +16,7 @@ export function Gifts() {
         </Box>
 
         <Box className="gifts__body" component="p">
-          {t('gifts.body')}
+          <Trans i18nKey="gifts.body" components={{ strong: <strong /> }} />
         </Box>
       </Box>
     </Box>

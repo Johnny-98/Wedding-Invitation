@@ -62,6 +62,10 @@
     "dressCode": {
       "label": "Dress Code",
       "body": "Please wear cocktail or formal attire, and please avoid wearing white."
+    },
+    "noBouquets": {
+      "label": "No Bouquets",
+      "body": "The most beautiful decoration of our celebration will be your smiles, so please do not bring bouquets!"
     }
   },
   "gifts": {
