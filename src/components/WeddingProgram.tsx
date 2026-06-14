@@ -9,15 +9,19 @@ const PROGRAM_ITEMS = [
     image: '/images/timeline-date.jpg',
   },
   {
-    key: 'christianCeremony',
+    key: 'churchWedding',
     image: '/images/timeline-christian-ceremony.jpg',
   },
   {
-    key: 'ceremony',
+    key: 'cocktail',
+    image: '/images/timeline-cocktail.jpg',
+  },
+  {
+    key: 'civilCeremony',
     image: '/images/timeline-ceremony.jpg',
   },
   {
-    key: 'reception',
+    key: 'restaurant',
     image: '/images/timeline-reception.jpg',
   },
 ] as const;
@@ -46,7 +50,7 @@ export function WeddingProgram() {
               <Box className="timeline__image-wrap">
                 <img
                   className={`timeline__image${
-                    item.key === 'christianCeremony'
+                    item.key === 'churchWedding'
                       ? ' timeline__image--christian-ceremony'
                       : ''
                   }`}

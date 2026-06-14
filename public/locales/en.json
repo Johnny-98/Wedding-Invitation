@@ -2,11 +2,11 @@
   "hero": {
     "partner1Name": "Iren",
     "partner2Name": "Peter",
-    "inviteLine": "Invite you to their wedding on",
+    "inviteLine1": "Dear family and friends,",
+    "inviteLine2": "we have the pleasure of inviting you to our wedding",
     "month": "September",
-    "locationLine1": "Kaia Cove",
-    "locationLine2": "Resort, Maui",
-    "rsvp": "RSVP"
+    "location": "Wedding Complex \"Amaya Beach\", Kraymorie, Burgas",
+    "rsvp": "Click here to confirm"
   },
   "invitation": {
     "back": "Back",
@@ -14,10 +14,12 @@
   },
   "loveStory": {
     "headingScript": "TheLove",
-    "headingSerif": "STORY",
+    "headingSerif": "story",
     "photoAlt": "Iren and Peter",
     "paragraph1": "Once upon a time, two hearts found each other among millions of others, and fate decreed that they would be together forever.",
-    "paragraph2": "Dear family and friends, with great joy we invite you to join us and share the day when we celebrate our love and the beginning of our family!",
+    "paragraph2Line1": "Dear family and friends,",
+    "paragraph2Line2": "we have the pleasure of inviting you to our wedding.",
+    "bestMen": "Best men: Plamena and Peter Apostolov",
     "signOff": "With love",
     "signature": "Iren and Peter"
   },
@@ -27,31 +29,36 @@
       "label": "Date",
       "imageAlt": "Iren and Peter"
     },
-    "christianCeremony": {
-      "label": "Christian Ceremony",
-      "detail": "Details to follow",
+    "churchWedding": {
+      "label": "Church Wedding at St. Pimen Zografski Church",
+      "detail": "4:00 PM",
       "imageAlt": "St. Pimen Zografski Church"
     },
-    "ceremony": {
-      "label": "Ceremony",
-      "detail": "4:30 PM at Oceanview Lawn, Kaia Cove Resort",
-      "imageAlt": "Beach wedding ceremony arch"
+    "cocktail": {
+      "label": "Cocktail with Welcome Drink",
+      "detail": "5:00 PM",
+      "imageAlt": "Wedding cocktail"
     },
-    "reception": {
-      "label": "Reception",
-      "detail": "6:30 PM at The Hana Pavilion on the grounds of Kaia Cove Resort",
-      "imageAlt": "Indoor wedding reception hall"
+    "civilCeremony": {
+      "label": "Outdoor Civil Ceremony & Receiving Congratulations",
+      "detail": "5:40 PM",
+      "imageAlt": "Outdoor civil ceremony and receiving congratulations"
+    },
+    "restaurant": {
+      "label": "Restaurant",
+      "detail": "7:00 PM",
+      "imageAlt": "Wedding dinner at the restaurant"
     }
   },
   "otherDetails": {
     "heading": "Other Details",
-    "travel": {
-      "label": "Travel",
-      "body": "We recommend flying into Kahului Airport (OGG)"
+    "location": {
+      "label": "Location",
+      "body": "Wedding Complex \"Amaya Beach\", Kraymorie, Burgas"
     },
     "accommodation": {
       "label": "Accommodation",
-      "body": "A select number of rooms have been set aside at Maui Coast Resort. Kindly RSVP to help us confirm that all our guests have secured their accommodations."
+      "body": "We offer the option of accommodation"
     },
     "dressCode": {
       "label": "Dress Code",
@@ -61,9 +68,7 @@
   "gifts": {
     "heading": "Gifts",
     "tagline": "YOUR PRESENCE IS THE GREATEST GIFT WE COULD RECEIVE.",
-    "body": "For those who have asked, we've set up a small registry to assist us in starting our next chapter together.",
-    "registryButton": "VIEW OUR REGISTRY",
-    "registryAriaLabel": "View our gift registry"
+    "body": "For those who have asked, we've set up a small registry to assist us in starting our next chapter together."
   },
   "rsvp": {
     "openForm": "Open RSVP form",
@@ -71,8 +76,8 @@
   },
   "rsvpBanner": {
     "heading": "RSVP",
-    "deadlineScript": "by July 30, 2026",
-    "body": "We can't wait to celebrate our wedding with you! Your presence means the world to us, and we're thrilled to share our special day with you."
+    "deadlineScript": "by July 15, 2026",
+    "body": "We can't wait to celebrate our wedding with you! Your presence means the world to us, and we look forward to sharing our special day with you!"
   },
   "language": {
     "switchToEnglish": "English",
@@ -83,5 +88,14 @@
     "play": "Play",
     "pause": "Pause",
     "label": "Background music"
+  },
+  "countdown": {
+    "ariaLabel": "Countdown to the wedding",
+    "dateLabel": "Wedding date",
+    "days": "days",
+    "hours": "hrs",
+    "minutes": "min",
+    "seconds": "sec",
+    "complete": "Today is the day!"
   }
 }

@@ -12,11 +12,7 @@ export function Rsvp() {
       aria-labelledby="rsvp-banner-heading"
     >
       <Box className="rsvp-banner__content">
-        <Link
-          className="rsvp-banner__link"
-          to="/rsvp"
-          aria-label={t('rsvp.openForm')}
-        >
+        <Box className="rsvp-banner__inner">
           <Box
             className="rsvp-banner__heading"
             component="h2"
@@ -32,7 +28,15 @@ export function Rsvp() {
           <Box className="rsvp-banner__body" component="p">
             {t('rsvpBanner.body')}
           </Box>
-        </Link>
+
+          <Link
+            className="rsvp-banner__button"
+            to="/rsvp"
+            aria-label={t('rsvp.openForm')}
+          >
+            {t('hero.rsvp')}
+          </Link>
+        </Box>
       </Box>
 
       <Box className="rsvp-banner__stripes" aria-hidden="true" />

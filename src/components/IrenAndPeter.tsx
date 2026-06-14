@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
 import { formatHeroDate } from '@/constants/weddingDate';
 
@@ -21,31 +20,22 @@ export function IrenAndPeter() {
           </span>
         </Typography>
 
-        <Typography className="invitation-hero-invite" component="p">
-          {t('hero.inviteLine')}
-        </Typography>
+        <Box className="invitation-hero-message">
+          <Typography className="invitation-hero-invite" component="p">
+            {t('hero.inviteLine1')}
+            <br />
+            {t('hero.inviteLine2')}
+          </Typography>
 
-        <Box className="invitation-hero-details">
-          <Typography className="invitation-hero-date" component="span">
+          <Typography className="invitation-hero-date" component="p">
             {formatHeroDate(t)}
           </Typography>
-          <Box className="invitation-hero-divider" aria-hidden="true" />
-          <Box className="invitation-hero-location">
-            <Typography component="span">{t('hero.locationLine1')}</Typography>
-            <Typography component="span">{t('hero.locationLine2')}</Typography>
-          </Box>
+
+          <Typography className="invitation-hero-location" component="p">
+            {t('hero.location')}
+          </Typography>
         </Box>
       </Box>
-
-      <Link
-        className="invitation-hero-rsvp"
-        to="/rsvp"
-        aria-label={t('rsvp.openForm')}
-      >
-        {t('hero.rsvp')}
-      </Link>
-
-      <Box className="invitation-hero-sand-bar" aria-hidden="true" />
     </Box>
   );
 }

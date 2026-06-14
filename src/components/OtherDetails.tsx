@@ -1,15 +1,15 @@
+import CheckroomIcon from '@mui/icons-material/Checkroom';
 import LocalHotelIcon from '@mui/icons-material/LocalHotel';
-import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
-import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const DETAIL_KEYS = ['travel', 'accommodation', 'dressCode'] as const;
+const DETAIL_KEYS = ['location', 'accommodation', 'dressCode'] as const;
 
 const DETAIL_ICONS = {
-  travel: TravelExploreIcon,
+  location: LocationOnIcon,
   accommodation: LocalHotelIcon,
-  dressCode: QuestionMarkIcon,
+  dressCode: CheckroomIcon,
 } as const;
 
 export function OtherDetails() {
