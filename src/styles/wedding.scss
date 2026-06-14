@@ -198,8 +198,15 @@ $hero-text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.35);
 .wedding-bg {
   position: fixed;
   inset: 0;
-  background: url('/images/waves.gif') center center / cover no-repeat;
   z-index: 0;
+  overflow: hidden;
+}
+
+.wedding-bg__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .app-shell {
